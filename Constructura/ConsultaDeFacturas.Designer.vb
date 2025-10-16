@@ -23,14 +23,11 @@ Partial Class ConsultaDeFacturas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnReimprimir = New System.Windows.Forms.Button()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -44,6 +41,7 @@ Partial Class ConsultaDeFacturas
         Me.dpFechaInicial = New System.Windows.Forms.DateTimePicker()
         Me.dpFechaFinal = New System.Windows.Forms.DateTimePicker()
         Me.dgFacturas = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.seleccionaFactura = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn()
         Me.codigoFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -52,7 +50,7 @@ Partial Class ConsultaDeFacturas
         Me.vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cajas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.formaDePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.totalImpuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -97,7 +95,7 @@ Partial Class ConsultaDeFacturas
         Me.txtNombre.Location = New System.Drawing.Point(170, 53)
         Me.txtNombre.MaxLength = 20
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(207, 20)
+        Me.txtNombre.Size = New System.Drawing.Size(207, 23)
         Me.txtNombre.TabIndex = 164
         '
         'Label6
@@ -108,7 +106,7 @@ Partial Class ConsultaDeFacturas
         Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label6.Location = New System.Drawing.Point(20, 571)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(147, 13)
+        Me.Label6.Size = New System.Drawing.Size(194, 17)
         Me.Label6.TabIndex = 163
         Me.Label6.Text = "Doble click para ver el detalle"
         '
@@ -121,7 +119,7 @@ Partial Class ConsultaDeFacturas
         Me.txtCodigo.Location = New System.Drawing.Point(170, 25)
         Me.txtCodigo.MaxLength = 20
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(207, 20)
+        Me.txtCodigo.Size = New System.Drawing.Size(207, 23)
         Me.txtCodigo.TabIndex = 162
         '
         'chkNombreCliente
@@ -132,7 +130,7 @@ Partial Class ConsultaDeFacturas
         Me.chkNombreCliente.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.chkNombreCliente.Location = New System.Drawing.Point(21, 55)
         Me.chkNombreCliente.Name = "chkNombreCliente"
-        Me.chkNombreCliente.Size = New System.Drawing.Size(98, 17)
+        Me.chkNombreCliente.Size = New System.Drawing.Size(127, 21)
         Me.chkNombreCliente.TabIndex = 161
         Me.chkNombreCliente.Text = "Nombre Cliente"
         Me.chkNombreCliente.UseVisualStyleBackColor = True
@@ -145,7 +143,7 @@ Partial Class ConsultaDeFacturas
         Me.chkCodigo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.chkCodigo.Location = New System.Drawing.Point(21, 27)
         Me.chkCodigo.Name = "chkCodigo"
-        Me.chkCodigo.Size = New System.Drawing.Size(102, 17)
+        Me.chkCodigo.Size = New System.Drawing.Size(132, 21)
         Me.chkCodigo.TabIndex = 160
         Me.chkCodigo.Text = "Número Factura"
         Me.chkCodigo.UseVisualStyleBackColor = True
@@ -184,7 +182,7 @@ Partial Class ConsultaDeFacturas
         Me.chkFechas.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.chkFechas.Location = New System.Drawing.Point(21, 85)
         Me.chkFechas.Name = "chkFechas"
-        Me.chkFechas.Size = New System.Drawing.Size(96, 17)
+        Me.chkFechas.Size = New System.Drawing.Size(122, 21)
         Me.chkFechas.TabIndex = 165
         Me.chkFechas.Text = "Rango Fechas"
         Me.chkFechas.UseVisualStyleBackColor = True
@@ -197,7 +195,7 @@ Partial Class ConsultaDeFacturas
         Me.dpFechaInicial.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dpFechaInicial.Location = New System.Drawing.Point(170, 83)
         Me.dpFechaInicial.Name = "dpFechaInicial"
-        Me.dpFechaInicial.Size = New System.Drawing.Size(207, 20)
+        Me.dpFechaInicial.Size = New System.Drawing.Size(207, 23)
         Me.dpFechaInicial.TabIndex = 166
         '
         'dpFechaFinal
@@ -208,7 +206,7 @@ Partial Class ConsultaDeFacturas
         Me.dpFechaFinal.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.dpFechaFinal.Location = New System.Drawing.Point(401, 83)
         Me.dpFechaFinal.Name = "dpFechaFinal"
-        Me.dpFechaFinal.Size = New System.Drawing.Size(207, 20)
+        Me.dpFechaFinal.Size = New System.Drawing.Size(207, 23)
         Me.dpFechaFinal.TabIndex = 167
         '
         'dgFacturas
@@ -218,142 +216,17 @@ Partial Class ConsultaDeFacturas
         Me.dgFacturas.AllowUserToResizeRows = False
         Me.dgFacturas.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.dgFacturas.BackgroundColor = System.Drawing.Color.SkyBlue
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgFacturas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgFacturas.ColumnHeadersHeight = 29
         Me.dgFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgFacturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.seleccionaFactura, Me.codigoFactura, Me.cliente, Me.fechaFactura, Me.totalFactura, Me.vendedor, Me.cajas, Me.formaDePago})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgFacturas.DefaultCellStyle = DataGridViewCellStyle8
+        Me.dgFacturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.seleccionaFactura, Me.codigoFactura, Me.cliente, Me.fechaFactura, Me.totalFactura, Me.vendedor, Me.cajas, Me.formaDePago, Me.totalImpuesto})
         Me.dgFacturas.Location = New System.Drawing.Point(23, 148)
         Me.dgFacturas.MultiSelect = False
         Me.dgFacturas.Name = "dgFacturas"
         Me.dgFacturas.ReadOnly = True
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgFacturas.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgFacturas.RowHeadersWidth = 5
         Me.dgFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgFacturas.Size = New System.Drawing.Size(900, 409)
         Me.dgFacturas.TabIndex = 168
-        '
-        'seleccionaFactura
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.NullValue = False
-        Me.seleccionaFactura.DefaultCellStyle = DataGridViewCellStyle2
-        Me.seleccionaFactura.FalseValue = Nothing
-        Me.seleccionaFactura.HeaderText = ""
-        Me.seleccionaFactura.IndeterminateValue = Nothing
-        Me.seleccionaFactura.Name = "seleccionaFactura"
-        Me.seleccionaFactura.ReadOnly = True
-        Me.seleccionaFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.seleccionaFactura.TrueValue = Nothing
-        Me.seleccionaFactura.Width = 30
-        '
-        'codigoFactura
-        '
-        Me.codigoFactura.DataPropertyName = "codigoFactura"
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.codigoFactura.DefaultCellStyle = DataGridViewCellStyle3
-        Me.codigoFactura.HeaderText = "Código"
-        Me.codigoFactura.Name = "codigoFactura"
-        Me.codigoFactura.ReadOnly = True
-        Me.codigoFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.codigoFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.codigoFactura.Width = 70
-        '
-        'cliente
-        '
-        Me.cliente.DataPropertyName = "cliente"
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
-        Me.cliente.DefaultCellStyle = DataGridViewCellStyle4
-        Me.cliente.HeaderText = "Cliente"
-        Me.cliente.Name = "cliente"
-        Me.cliente.ReadOnly = True
-        Me.cliente.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.cliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.cliente.Width = 300
-        '
-        'fechaFactura
-        '
-        Me.fechaFactura.DataPropertyName = "fechaFactura"
-        DataGridViewCellStyle5.Format = "d"
-        DataGridViewCellStyle5.NullValue = Nothing
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
-        Me.fechaFactura.DefaultCellStyle = DataGridViewCellStyle5
-        Me.fechaFactura.HeaderText = "Fecha Factura"
-        Me.fechaFactura.Name = "fechaFactura"
-        Me.fechaFactura.ReadOnly = True
-        Me.fechaFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.fechaFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.fechaFactura.Width = 150
-        '
-        'totalFactura
-        '
-        Me.totalFactura.DataPropertyName = "totalFactura"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        Me.totalFactura.DefaultCellStyle = DataGridViewCellStyle6
-        Me.totalFactura.HeaderText = "Total Factura"
-        Me.totalFactura.Name = "totalFactura"
-        Me.totalFactura.ReadOnly = True
-        Me.totalFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.totalFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.totalFactura.Width = 130
-        '
-        'vendedor
-        '
-        Me.vendedor.DataPropertyName = "vendedor"
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
-        Me.vendedor.DefaultCellStyle = DataGridViewCellStyle7
-        Me.vendedor.HeaderText = "Vendedor"
-        Me.vendedor.Name = "vendedor"
-        Me.vendedor.ReadOnly = True
-        Me.vendedor.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.vendedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.vendedor.Width = 300
-        '
-        'cajas
-        '
-        Me.cajas.DataPropertyName = "IdMaquina"
-        Me.cajas.HeaderText = "cajas"
-        Me.cajas.Name = "cajas"
-        Me.cajas.ReadOnly = True
-        Me.cajas.Visible = False
-        '
-        'formaDePago
-        '
-        Me.formaDePago.DataPropertyName = "FormaPago"
-        Me.formaDePago.HeaderText = "formaDePago"
-        Me.formaDePago.Name = "formaDePago"
-        Me.formaDePago.ReadOnly = True
-        Me.formaDePago.Visible = False
         '
         'GroupBox1
         '
@@ -374,9 +247,131 @@ Partial Class ConsultaDeFacturas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = " Filtros "
         '
+        'seleccionaFactura
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.NullValue = False
+        Me.seleccionaFactura.DefaultCellStyle = DataGridViewCellStyle1
+        Me.seleccionaFactura.FalseValue = Nothing
+        Me.seleccionaFactura.HeaderText = ""
+        Me.seleccionaFactura.IndeterminateValue = Nothing
+        Me.seleccionaFactura.MinimumWidth = 6
+        Me.seleccionaFactura.Name = "seleccionaFactura"
+        Me.seleccionaFactura.ReadOnly = True
+        Me.seleccionaFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.seleccionaFactura.TrueValue = Nothing
+        Me.seleccionaFactura.Width = 30
+        '
+        'codigoFactura
+        '
+        Me.codigoFactura.DataPropertyName = "codigoFactura"
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.codigoFactura.DefaultCellStyle = DataGridViewCellStyle2
+        Me.codigoFactura.HeaderText = "Código"
+        Me.codigoFactura.MinimumWidth = 6
+        Me.codigoFactura.Name = "codigoFactura"
+        Me.codigoFactura.ReadOnly = True
+        Me.codigoFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.codigoFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.codigoFactura.Width = 70
+        '
+        'cliente
+        '
+        Me.cliente.DataPropertyName = "cliente"
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.cliente.DefaultCellStyle = DataGridViewCellStyle3
+        Me.cliente.HeaderText = "Cliente"
+        Me.cliente.MinimumWidth = 6
+        Me.cliente.Name = "cliente"
+        Me.cliente.ReadOnly = True
+        Me.cliente.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.cliente.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.cliente.Width = 300
+        '
+        'fechaFactura
+        '
+        Me.fechaFactura.DataPropertyName = "fechaFactura"
+        DataGridViewCellStyle4.Format = "d"
+        DataGridViewCellStyle4.NullValue = Nothing
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.fechaFactura.DefaultCellStyle = DataGridViewCellStyle4
+        Me.fechaFactura.HeaderText = "Fecha Factura"
+        Me.fechaFactura.MinimumWidth = 6
+        Me.fechaFactura.Name = "fechaFactura"
+        Me.fechaFactura.ReadOnly = True
+        Me.fechaFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.fechaFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.fechaFactura.Width = 150
+        '
+        'totalFactura
+        '
+        Me.totalFactura.DataPropertyName = "totalFactura"
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.totalFactura.DefaultCellStyle = DataGridViewCellStyle5
+        Me.totalFactura.HeaderText = "Total Factura"
+        Me.totalFactura.MinimumWidth = 6
+        Me.totalFactura.Name = "totalFactura"
+        Me.totalFactura.ReadOnly = True
+        Me.totalFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.totalFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.totalFactura.Width = 130
+        '
+        'vendedor
+        '
+        Me.vendedor.DataPropertyName = "vendedor"
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        Me.vendedor.DefaultCellStyle = DataGridViewCellStyle6
+        Me.vendedor.HeaderText = "Vendedor"
+        Me.vendedor.MinimumWidth = 6
+        Me.vendedor.Name = "vendedor"
+        Me.vendedor.ReadOnly = True
+        Me.vendedor.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.vendedor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.vendedor.Width = 300
+        '
+        'cajas
+        '
+        Me.cajas.DataPropertyName = "IdMaquina"
+        Me.cajas.HeaderText = "cajas"
+        Me.cajas.MinimumWidth = 6
+        Me.cajas.Name = "cajas"
+        Me.cajas.ReadOnly = True
+        Me.cajas.Visible = False
+        Me.cajas.Width = 125
+        '
+        'formaDePago
+        '
+        Me.formaDePago.DataPropertyName = "FormaPago"
+        Me.formaDePago.HeaderText = "formaDePago"
+        Me.formaDePago.MinimumWidth = 6
+        Me.formaDePago.Name = "formaDePago"
+        Me.formaDePago.ReadOnly = True
+        Me.formaDePago.Visible = False
+        Me.formaDePago.Width = 125
+        '
+        'totalImpuesto
+        '
+        Me.totalImpuesto.DataPropertyName = "totalImpuesto"
+        Me.totalImpuesto.HeaderText = "totalImpuesto"
+        Me.totalImpuesto.MinimumWidth = 6
+        Me.totalImpuesto.Name = "totalImpuesto"
+        Me.totalImpuesto.ReadOnly = True
+        Me.totalImpuesto.Visible = False
+        Me.totalImpuesto.Width = 125
+        '
         'ConsultaDeFacturas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(948, 656)
@@ -408,6 +403,7 @@ Partial Class ConsultaDeFacturas
     Friend WithEvents dpFechaInicial As DateTimePicker
     Friend WithEvents dpFechaFinal As DateTimePicker
     Friend WithEvents dgFacturas As DataGridView
+    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents seleccionaFactura As ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn
     Friend WithEvents codigoFactura As DataGridViewTextBoxColumn
     Friend WithEvents cliente As DataGridViewTextBoxColumn
@@ -416,5 +412,5 @@ Partial Class ConsultaDeFacturas
     Friend WithEvents vendedor As DataGridViewTextBoxColumn
     Friend WithEvents cajas As DataGridViewTextBoxColumn
     Friend WithEvents formaDePago As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents totalImpuesto As DataGridViewTextBoxColumn
 End Class

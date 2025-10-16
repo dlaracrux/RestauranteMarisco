@@ -182,6 +182,7 @@ Public Class FrmCajas
         laFacturaSeleccionada.FechaFactura = CDate(dgFacturas.Item("fechaFactura", e).Value)
         laFacturaSeleccionada.NombreCliente = dgFacturas.Item("cliente", e).Value
         laFacturaSeleccionada.TotalFactura = dgFacturas.Item("totalFactura", e).Value
+        laFacturaSeleccionada.TotalImpuesto = dgFacturas.Item("totalImpuesto", e).Value
         laFacturaSeleccionada.Vendedor = dgFacturas.Item("vendedor", e).Value
         laFacturaSeleccionada.Lineas = New List(Of BEFacturaLinea)
         laFacturaSeleccionada.Lineas = laInstanciaDeFactura.CargueElDetalleDeLaFacturaSeleccionada(laFacturaSeleccionada.Codigo)

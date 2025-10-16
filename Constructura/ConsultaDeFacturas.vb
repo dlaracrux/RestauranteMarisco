@@ -163,6 +163,7 @@ Public Class ConsultaDeFacturas
         laFacturaSeleccionada.FechaFactura = CDate(dgFacturas.Item("fechaFactura", e).Value)
         laFacturaSeleccionada.NombreCliente = dgFacturas.Item("cliente", e).Value
         laFacturaSeleccionada.TotalFactura = dgFacturas.Item("totalFactura", e).Value
+        laFacturaSeleccionada.TotalImpuesto = dgFacturas.Item("totalImpuesto", e).Value
         laFacturaSeleccionada.Vendedor = dgFacturas.Item("vendedor", e).Value
         laFacturaSeleccionada.FormaDePago = dgFacturas.Item("formaDePago", e).Value
         laFacturaSeleccionada.Caja = dgFacturas.Item("cajas", e).Value
@@ -207,6 +208,10 @@ Public Class ConsultaDeFacturas
         Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
         Mensaje = "                 Cariari, Pococí, Limón "
+        e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
+        Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
+
+        Mensaje = "    Correo: delmariscorancho@gmail.com"
         e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
         Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
@@ -292,6 +297,19 @@ Public Class ConsultaDeFacturas
         '*************************************************************************
         '  Imprime las líneas de la factura
         '*************************************************************************
+
+        'SUBTOTAL
+        fuente = New System.Drawing.Font("Arial", 9, FontStyle.Bold)
+        Mensaje = "SUBTOTAL:   " & Format(CDbl(laFacturaSeleccionada.TotalFactura) - CDbl(laFacturaSeleccionada.TotalImpuesto), "₡###,###,##0.00")
+        e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 5, Num_Linea)
+        Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
+
+
+        'Total Impuesto
+        fuente = New System.Drawing.Font("Arial", 9, FontStyle.Bold)
+        Mensaje = "TOTAL IMPUESTO:   " & Format(laFacturaSeleccionada.TotalImpuesto, "₡###,###,##0.00")
+        e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 5, Num_Linea)
+        Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
 
         'Total

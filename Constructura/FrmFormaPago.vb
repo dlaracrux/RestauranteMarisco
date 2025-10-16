@@ -141,6 +141,10 @@ Public Class FrmFormaPago
         e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
         Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
+        Mensaje = "    Correo: delmariscorancho@gmail.com"
+        e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
+        Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
+
         Mensaje = "                 FACTURA CONTADO: " & laFacturaSeleccionada.Codigo
         e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
         Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
@@ -224,6 +228,17 @@ Public Class FrmFormaPago
         '  Imprime las líneas de la factura
         '*************************************************************************
 
+        'SUBTOTAL
+        fuente = New System.Drawing.Font("Arial", 9, FontStyle.Bold)
+        Mensaje = "SUBTOTAL:   " & Format(CDbl(laFacturaSeleccionada.TotalFactura) - CDbl(laFacturaSeleccionada.TotalImpuesto), "₡###,###,##0.00")
+        e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 5, Num_Linea)
+        Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
+
+        'Total Impuesto
+        fuente = New System.Drawing.Font("Arial", 9, FontStyle.Bold)
+        Mensaje = "TOTAL IMPUESTO:   " & Format(laFacturaSeleccionada.TotalImpuesto, "₡###,###,##0.00")
+        e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 5, Num_Linea)
+        Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
         'Total
         fuente = New System.Drawing.Font("Arial", 9, FontStyle.Bold)
