@@ -70,6 +70,8 @@ Partial Class Registro_Facturas
         Me.txtTotalFactura = New System.Windows.Forms.TextBox()
         Me.lblTotalImpuesto = New System.Windows.Forms.Label()
         Me.txtTotalImpuesto = New System.Windows.Forms.TextBox()
+        Me.rbBarra = New System.Windows.Forms.RadioButton()
+        Me.rbMesa = New System.Windows.Forms.RadioButton()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -638,12 +640,40 @@ Partial Class Registro_Facturas
         Me.txtTotalImpuesto.TabIndex = 137
         Me.txtTotalImpuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
+        'rbBarra
+        '
+        Me.rbBarra.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.rbBarra.AutoSize = True
+        Me.rbBarra.Checked = True
+        Me.rbBarra.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.rbBarra.Location = New System.Drawing.Point(44, 777)
+        Me.rbBarra.Name = "rbBarra"
+        Me.rbBarra.Size = New System.Drawing.Size(61, 20)
+        Me.rbBarra.TabIndex = 139
+        Me.rbBarra.TabStop = True
+        Me.rbBarra.Text = "Barra"
+        Me.rbBarra.UseVisualStyleBackColor = True
+        '
+        'rbMesa
+        '
+        Me.rbMesa.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.rbMesa.AutoSize = True
+        Me.rbMesa.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.rbMesa.Location = New System.Drawing.Point(44, 805)
+        Me.rbMesa.Name = "rbMesa"
+        Me.rbMesa.Size = New System.Drawing.Size(62, 20)
+        Me.rbMesa.TabIndex = 140
+        Me.rbMesa.Text = "Mesa"
+        Me.rbMesa.UseVisualStyleBackColor = True
+        '
         'Registro_Facturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1315, 874)
+        Me.Controls.Add(Me.rbBarra)
+        Me.Controls.Add(Me.rbMesa)
         Me.Controls.Add(Me.lblTotalImpuesto)
         Me.Controls.Add(Me.txtTotalImpuesto)
         Me.Controls.Add(Me.Label5)
@@ -709,4 +739,6 @@ Partial Class Registro_Facturas
     Friend WithEvents lblModificaPrecio As LinkLabel
     Friend WithEvents lblTotalImpuesto As Label
     Friend WithEvents txtTotalImpuesto As TextBox
+    Friend WithEvents rbBarra As RadioButton
+    Friend WithEvents rbMesa As RadioButton
 End Class

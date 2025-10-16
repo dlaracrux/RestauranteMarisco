@@ -29,6 +29,8 @@ Public Class DLFacturas
             Cmd.Parameters.AddWithValue("@CedulaCliente", laFacturaAGuardar.CedulaCliente)
             Cmd.Parameters.AddWithValue("@Usuario", laFacturaAGuardar.Usuario)
             Cmd.Parameters.AddWithValue("@TotalFactura", laFacturaAGuardar.TotalFactura)
+            Cmd.Parameters.AddWithValue("@TotalImpuesto", laFacturaAGuardar.TotalImpuesto)
+            Cmd.Parameters.AddWithValue("@Lugar", laFacturaAGuardar.Lugar)
             Da.SelectCommand = Cmd
             Da.Fill(Ds)
             codigoFactura = CInt(Ds.Tables(0).Rows(0)("codigoFactura"))

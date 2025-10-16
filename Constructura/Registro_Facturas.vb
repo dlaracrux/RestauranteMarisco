@@ -271,6 +271,7 @@ Public Class Registro_Facturas
                 facturaEncabezado.TotalImpuesto = CDec(txtTotalImpuesto.Text)
                 facturaEncabezado.FechaFactura = Now
                 facturaEncabezado.Estado = "P"
+                facturaEncabezado.Lugar = IIf(rbBarra.Checked, 0, 1)
                 facturaEncabezado.Lineas = New List(Of BEFacturaLinea)
                 For Each Fila As DataGridViewRow In dgLinea.Rows
                     If Not Fila Is Nothing Then
