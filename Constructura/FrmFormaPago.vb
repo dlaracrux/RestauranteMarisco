@@ -126,18 +126,18 @@ Public Class FrmFormaPago
 
         ' Tipo de Factura
         fuente = New System.Drawing.Font("Arial", 16, FontStyle.Bold)
-        Mensaje = "TUCO LLANTAS Y MÁS"
+        Mensaje = "Restaurante Del Marisco"
         e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
         Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
         fuente = New System.Drawing.Font("Arial", 9, FontStyle.Regular)
 
 
-        Mensaje = "                         Tel: 89166180 "
+        Mensaje = "                         Tel: 87959109 "
         e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
         Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
-        Mensaje = "                 Guápiles, Pococí, Limón "
+        Mensaje = "                 Cariari, Pococí, Limón "
         e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
         Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
