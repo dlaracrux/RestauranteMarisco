@@ -382,11 +382,11 @@ Partial Class MenuPrincipal
         'imgHome
         '
         Me.imgHome.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imgHome.Image = Global.Llantera.My.Resources.Resources.IconoTuco
+        Me.imgHome.Image = Global.Llantera.My.Resources.Resources.IconoRestaurante
         Me.imgHome.Location = New System.Drawing.Point(25, 20)
         Me.imgHome.Name = "imgHome"
         Me.imgHome.Size = New System.Drawing.Size(145, 86)
-        Me.imgHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgHome.TabIndex = 0
         Me.imgHome.TabStop = False
         '
@@ -406,7 +406,7 @@ Partial Class MenuPrincipal
         Me.Name = "MenuPrincipal"
         Me.RightToLeftLayout = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Tuco Llantas"
+        Me.Text = "Restaurante Del Marisco"
         Me.TransparencyKey = System.Drawing.Color.Gray
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.PanelMenu.ResumeLayout(False)

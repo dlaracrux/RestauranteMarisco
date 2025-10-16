@@ -22,15 +22,15 @@ Partial Class ConsultaDeFacturas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btnCerrar = New System.Windows.Forms.Button()
         Me.btnReimprimir = New System.Windows.Forms.Button()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -218,36 +218,36 @@ Partial Class ConsultaDeFacturas
         Me.dgFacturas.AllowUserToResizeRows = False
         Me.dgFacturas.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.dgFacturas.BackgroundColor = System.Drawing.Color.SkyBlue
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgFacturas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgFacturas.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgFacturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.seleccionaFactura, Me.codigoFactura, Me.cliente, Me.fechaFactura, Me.totalFactura, Me.vendedor, Me.cajas, Me.formaDePago})
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgFacturas.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgFacturas.DefaultCellStyle = DataGridViewCellStyle8
         Me.dgFacturas.Location = New System.Drawing.Point(23, 148)
         Me.dgFacturas.MultiSelect = False
         Me.dgFacturas.Name = "dgFacturas"
         Me.dgFacturas.ReadOnly = True
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgFacturas.RowHeadersDefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgFacturas.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgFacturas.RowHeadersWidth = 5
         Me.dgFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgFacturas.Size = New System.Drawing.Size(900, 409)
@@ -255,9 +255,9 @@ Partial Class ConsultaDeFacturas
         '
         'seleccionaFactura
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.NullValue = False
-        Me.seleccionaFactura.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.NullValue = False
+        Me.seleccionaFactura.DefaultCellStyle = DataGridViewCellStyle2
         Me.seleccionaFactura.FalseValue = Nothing
         Me.seleccionaFactura.HeaderText = ""
         Me.seleccionaFactura.IndeterminateValue = Nothing
@@ -270,10 +270,10 @@ Partial Class ConsultaDeFacturas
         'codigoFactura
         '
         Me.codigoFactura.DataPropertyName = "codigoFactura"
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        Me.codigoFactura.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.codigoFactura.DefaultCellStyle = DataGridViewCellStyle3
         Me.codigoFactura.HeaderText = "Código"
         Me.codigoFactura.Name = "codigoFactura"
         Me.codigoFactura.ReadOnly = True
@@ -284,10 +284,10 @@ Partial Class ConsultaDeFacturas
         'cliente
         '
         Me.cliente.DataPropertyName = "cliente"
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
-        Me.cliente.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.cliente.DefaultCellStyle = DataGridViewCellStyle4
         Me.cliente.HeaderText = "Cliente"
         Me.cliente.Name = "cliente"
         Me.cliente.ReadOnly = True
@@ -298,11 +298,11 @@ Partial Class ConsultaDeFacturas
         'fechaFactura
         '
         Me.fechaFactura.DataPropertyName = "fechaFactura"
-        DataGridViewCellStyle14.Format = "d"
-        DataGridViewCellStyle14.NullValue = Nothing
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black
-        Me.fechaFactura.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle5.Format = "d"
+        DataGridViewCellStyle5.NullValue = Nothing
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.fechaFactura.DefaultCellStyle = DataGridViewCellStyle5
         Me.fechaFactura.HeaderText = "Fecha Factura"
         Me.fechaFactura.Name = "fechaFactura"
         Me.fechaFactura.ReadOnly = True
@@ -313,12 +313,12 @@ Partial Class ConsultaDeFacturas
         'totalFactura
         '
         Me.totalFactura.DataPropertyName = "totalFactura"
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle15.Format = "N2"
-        DataGridViewCellStyle15.NullValue = Nothing
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black
-        Me.totalFactura.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "N2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        Me.totalFactura.DefaultCellStyle = DataGridViewCellStyle6
         Me.totalFactura.HeaderText = "Total Factura"
         Me.totalFactura.Name = "totalFactura"
         Me.totalFactura.ReadOnly = True
@@ -329,9 +329,9 @@ Partial Class ConsultaDeFacturas
         'vendedor
         '
         Me.vendedor.DataPropertyName = "vendedor"
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black
-        Me.vendedor.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        Me.vendedor.DefaultCellStyle = DataGridViewCellStyle7
         Me.vendedor.HeaderText = "Vendedor"
         Me.vendedor.Name = "vendedor"
         Me.vendedor.ReadOnly = True
@@ -387,7 +387,7 @@ Partial Class ConsultaDeFacturas
         Me.Controls.Add(Me.btnReimprimir)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "ConsultaDeFacturas"
-        Me.Text = "Mantenimiento Beneficiarios"
+        Me.Text = "Consulta Facturas"
         CType(Me.dgFacturas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

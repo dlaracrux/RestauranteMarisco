@@ -22,12 +22,12 @@ Partial Class Mantenimiento_Inventarios
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.txtNombreArticulo = New System.Windows.Forms.TextBox()
         Me.lNombreBanco = New System.Windows.Forms.Label()
         Me.lEstadoBanco = New System.Windows.Forms.Label()
@@ -265,10 +265,10 @@ Partial Class Mantenimiento_Inventarios
         'codigo
         '
         Me.codigo.DataPropertyName = "codigo"
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black
-        Me.codigo.DefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        Me.codigo.DefaultCellStyle = DataGridViewCellStyle7
         Me.codigo.HeaderText = "Código"
         Me.codigo.Name = "codigo"
         Me.codigo.ReadOnly = True
@@ -278,10 +278,10 @@ Partial Class Mantenimiento_Inventarios
         'articulo
         '
         Me.articulo.DataPropertyName = "nombre"
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.Color.Black
-        Me.articulo.DefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+        Me.articulo.DefaultCellStyle = DataGridViewCellStyle8
         Me.articulo.HeaderText = "Artículo"
         Me.articulo.Name = "articulo"
         Me.articulo.ReadOnly = True
@@ -291,11 +291,11 @@ Partial Class Mantenimiento_Inventarios
         'Tipo
         '
         Me.Tipo.DataPropertyName = "tipo"
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black
-        Me.Tipo.DefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
+        Me.Tipo.DefaultCellStyle = DataGridViewCellStyle9
         Me.Tipo.HeaderText = "Tipo"
         Me.Tipo.Name = "Tipo"
         Me.Tipo.ReadOnly = True
@@ -305,12 +305,12 @@ Partial Class Mantenimiento_Inventarios
         'Costo
         '
         Me.Costo.DataPropertyName = "costo"
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle28.Format = "N2"
-        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black
-        Me.Costo.DefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle10.Format = "N2"
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
+        Me.Costo.DefaultCellStyle = DataGridViewCellStyle10
         Me.Costo.HeaderText = "Costo"
         Me.Costo.Name = "Costo"
         Me.Costo.ReadOnly = True
@@ -319,13 +319,13 @@ Partial Class Mantenimiento_Inventarios
         'Precio
         '
         Me.Precio.DataPropertyName = "precio"
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle29.Format = "N2"
-        DataGridViewCellStyle29.NullValue = Nothing
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.Black
-        Me.Precio.DefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle11.Format = "N2"
+        DataGridViewCellStyle11.NullValue = Nothing
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
+        Me.Precio.DefaultCellStyle = DataGridViewCellStyle11
         Me.Precio.HeaderText = "Precio"
         Me.Precio.Name = "Precio"
         Me.Precio.ReadOnly = True
@@ -334,13 +334,13 @@ Partial Class Mantenimiento_Inventarios
         'Cantidad
         '
         Me.Cantidad.DataPropertyName = "cantidad"
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle30.Format = "N2"
-        DataGridViewCellStyle30.NullValue = Nothing
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.Black
-        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle12.Format = "N2"
+        DataGridViewCellStyle12.NullValue = Nothing
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
+        Me.Cantidad.DefaultCellStyle = DataGridViewCellStyle12
         Me.Cantidad.HeaderText = "Cantidad"
         Me.Cantidad.Name = "Cantidad"
         Me.Cantidad.ReadOnly = True
@@ -348,7 +348,7 @@ Partial Class Mantenimiento_Inventarios
         '
         'btnExportar
         '
-        Me.btnExportar.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnExportar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btnExportar.BackColor = System.Drawing.Color.SeaGreen
         Me.btnExportar.FlatAppearance.BorderSize = 0
         Me.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat

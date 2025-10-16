@@ -22,13 +22,13 @@ Partial Class Registro_Facturas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -437,10 +437,10 @@ Partial Class Registro_Facturas
         'codigo
         '
         Me.codigo.DataPropertyName = "codigo"
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black
-        Me.codigo.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.codigo.DefaultCellStyle = DataGridViewCellStyle1
         Me.codigo.HeaderText = "Código"
         Me.codigo.Name = "codigo"
         Me.codigo.ReadOnly = True
@@ -449,10 +449,10 @@ Partial Class Registro_Facturas
         'nombre
         '
         Me.nombre.DataPropertyName = "nombre"
-        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black
-        Me.nombre.DefaultCellStyle = DataGridViewCellStyle16
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.nombre.DefaultCellStyle = DataGridViewCellStyle2
         Me.nombre.HeaderText = "Artículo"
         Me.nombre.Name = "nombre"
         Me.nombre.ReadOnly = True
@@ -462,13 +462,13 @@ Partial Class Registro_Facturas
         'cantidad
         '
         Me.cantidad.DataPropertyName = "cantidad"
-        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle17.Format = "N2"
-        DataGridViewCellStyle17.NullValue = Nothing
-        DataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black
-        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle17
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle3
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.Name = "cantidad"
         Me.cantidad.ReadOnly = True
@@ -477,13 +477,13 @@ Partial Class Registro_Facturas
         'precio
         '
         Me.precio.DataPropertyName = "precio"
-        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle18.Format = "N2"
-        DataGridViewCellStyle18.NullValue = Nothing
-        DataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black
-        Me.precio.DefaultCellStyle = DataGridViewCellStyle18
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.precio.DefaultCellStyle = DataGridViewCellStyle4
         Me.precio.HeaderText = "Precio Unitario"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
@@ -493,11 +493,11 @@ Partial Class Registro_Facturas
         'tipo
         '
         Me.tipo.DataPropertyName = "tipo"
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black
-        Me.tipo.DefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.tipo.DefaultCellStyle = DataGridViewCellStyle5
         Me.tipo.HeaderText = "Tipo"
         Me.tipo.Name = "tipo"
         Me.tipo.ReadOnly = True
@@ -506,12 +506,12 @@ Partial Class Registro_Facturas
         'precioTotal
         '
         Me.precioTotal.DataPropertyName = "precioTotal"
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle20.Format = "N2"
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black
-        Me.precioTotal.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle6.Format = "N2"
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        Me.precioTotal.DefaultCellStyle = DataGridViewCellStyle6
         Me.precioTotal.HeaderText = "Precio Total "
         Me.precioTotal.Name = "precioTotal"
         Me.precioTotal.ReadOnly = True
@@ -521,8 +521,8 @@ Partial Class Registro_Facturas
         'existencias
         '
         Me.existencias.DataPropertyName = "existencias"
-        DataGridViewCellStyle21.Format = "N2"
-        Me.existencias.DefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle7.Format = "N2"
+        Me.existencias.DefaultCellStyle = DataGridViewCellStyle7
         Me.existencias.HeaderText = "Existencias"
         Me.existencias.Name = "existencias"
         Me.existencias.ReadOnly = True
@@ -539,7 +539,7 @@ Partial Class Registro_Facturas
         '
         'Label5
         '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
@@ -551,7 +551,7 @@ Partial Class Registro_Facturas
         '
         'txtTotalFactura
         '
-        Me.txtTotalFactura.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.txtTotalFactura.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtTotalFactura.Enabled = False
         Me.txtTotalFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText

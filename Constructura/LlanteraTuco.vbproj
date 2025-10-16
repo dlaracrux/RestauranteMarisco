@@ -292,6 +292,8 @@
   <ItemGroup>
     <Content Include="Librerias\ComponentFactory.Krypton.Toolkit.DLL" />
     <Content Include="Librerias\ExtendedControls.dll" />
+    <Content Include="Resources\IconoRestaurante.png" />
+    <None Include="Resources\IconoRestaurante1.png" />
     <Content Include="Resources\IconoTuco.ico" />
     <None Include="Resources\IconoTuco.jpeg" />
   </ItemGroup>

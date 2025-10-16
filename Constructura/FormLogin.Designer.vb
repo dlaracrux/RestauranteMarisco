@@ -149,11 +149,11 @@ Partial Class FormLogin
         'imgHome
         '
         Me.imgHome.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imgHome.Image = Global.Llantera.My.Resources.Resources.IconoTuco
+        Me.imgHome.Image = Global.Llantera.My.Resources.Resources.IconoRestaurante
         Me.imgHome.Location = New System.Drawing.Point(112, 103)
         Me.imgHome.Name = "imgHome"
         Me.imgHome.Size = New System.Drawing.Size(207, 138)
-        Me.imgHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imgHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.imgHome.TabIndex = 21
         Me.imgHome.TabStop = False
         '
