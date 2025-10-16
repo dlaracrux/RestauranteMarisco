@@ -14,8 +14,11 @@ Public Class Registro_Facturas
     End Sub
     Private Sub CargaElComboTipo()
         cmbTipo.Items.Clear()
-        cmbTipo.Items.Insert(0, "Servicio")
-        cmbTipo.Items.Insert(1, "Artículo")
+        cmbTipo.Items.Insert(0, "Producto")
+        cmbTipo.Items.Insert(1, "Plato")
+        cmbTipo.Items.Insert(2, "Bebida")
+        cmbTipo.Items.Insert(3, "Postre")
+        cmbTipo.Items.Insert(4, "Otro")
         cmbTipo.SelectedIndex = 1
     End Sub
 
@@ -93,10 +96,16 @@ Public Class Registro_Facturas
                 txtExistencias.Text = Format(elArticulo.cantidad, "0.00")
                 txtNombreArticulo.Text = elArticulo.nombre
 
-                If elArticulo.tipo = 1 Then
-                    cmbTipo.SelectedIndex = 1
-                Else
+                If elArticulo.tipo = 0 Then
                     cmbTipo.SelectedIndex = 0
+                ElseIf elArticulo.tipo = 1 Then
+                    cmbTipo.SelectedIndex = 1
+                ElseIf elArticulo.tipo = 2 Then
+                    cmbTipo.SelectedIndex = 2
+                ElseIf elArticulo.tipo = 3 Then
+                    cmbTipo.SelectedIndex = 4
+                Else
+                    cmbTipo.SelectedIndex = 5
                 End If
                 txtCantidad.Focus()
             Else

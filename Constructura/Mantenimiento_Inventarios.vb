@@ -11,26 +11,36 @@ Public Class Mantenimiento_Inventarios
     Private Sub Mantenimiento_Bancos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtNombreArticulo.CharacterCasing = CharacterCasing.Upper
         dgArticulos.AutoGenerateColumns = False
-
+        txtCantidad.Text = Format(1, "0.00")
         CargaElComboTipo()
         ObtengaLosArticulosEnElGrid()
         limpiarCampos()
+        If cmbTipo.SelectedIndex <> 0 Then
+            txtCantidad.Text = Format(1, "1.00")
+            txtCantidad.Enabled = False
+        Else
+            txtCantidad.Text = Format(0, "0.00")
+            txtCantidad.Enabled = True
+        End If
     End Sub
 
     Private Sub limpiarCampos()
         elArticuloSeleccionado = New Articulo
         txtNombreArticulo.Text = ""
-        cmbTipo.SelectedIndex = 1
-        txtCantidad.Text = ""
+        cmbTipo.SelectedIndex = 0
+        txtCantidad.Text = Format(0, "0.00")
         txtCosto.Text = ""
         txtPrecio.Text = ""
         txtCantidad.Enabled = True
     End Sub
     Private Sub CargaElComboTipo()
         cmbTipo.Items.Clear()
-        cmbTipo.Items.Insert(0, "Servicio")
-        cmbTipo.Items.Insert(1, "Artículo")
-        cmbTipo.SelectedIndex = 1
+        cmbTipo.Items.Insert(0, "Producto")
+        cmbTipo.Items.Insert(1, "Plato")
+        cmbTipo.Items.Insert(2, "Bebida")
+        cmbTipo.Items.Insert(3, "Postre")
+        cmbTipo.Items.Insert(4, "Otro")
+        cmbTipo.SelectedIndex = 0
 
     End Sub
 
@@ -50,6 +60,8 @@ Public Class Mantenimiento_Inventarios
             MsgBox("Debe de ingregar el precio del artículo", MsgBoxStyle.Exclamation)
         ElseIf txtCantidad.Text = "" Then
             MsgBox("Debe de ingregar la cantidad del artículo", MsgBoxStyle.Exclamation)
+        ElseIf CInt(txtCantidad.Text) = 0 Then
+            MsgBox("Debe de ingregar almenos 1 cantidad del artículo", MsgBoxStyle.Exclamation)
         Else
 
             If elArticuloSeleccionado.codigo <> 0 Then
@@ -81,11 +93,20 @@ Public Class Mantenimiento_Inventarios
             elArticuloSeleccionado.precio = CStr(dgArticulos.Item(4, e.RowIndex).Value.ToString)
             elArticuloSeleccionado.cantidad = CStr(dgArticulos.Item(5, e.RowIndex).Value.ToString)
 
-            If CStr(dgArticulos.Item(2, e.RowIndex).Value.ToString) = "Articulo" Then
-                elArticuloSeleccionado.tipo = 1
-                txtCantidad.Enabled = True
-            Else
+            If CStr(dgArticulos.Item(2, e.RowIndex).Value.ToString) = "Producto" Then
                 elArticuloSeleccionado.tipo = 0
+                txtCantidad.Enabled = True
+            ElseIf CStr(dgArticulos.Item(2, e.RowIndex).Value.ToString) = "Plato" Then
+                elArticuloSeleccionado.tipo = 1
+                txtCantidad.Enabled = False
+            ElseIf CStr(dgArticulos.Item(2, e.RowIndex).Value.ToString) = "Bebida" Then
+                elArticuloSeleccionado.tipo = 2
+                txtCantidad.Enabled = False
+            ElseIf CStr(dgArticulos.Item(2, e.RowIndex).Value.ToString) = "Postre" Then
+                elArticuloSeleccionado.tipo = 3
+                txtCantidad.Enabled = False
+            Else
+                elArticuloSeleccionado.tipo = 4
                 txtCantidad.Enabled = False
             End If
 
@@ -141,11 +162,11 @@ Public Class Mantenimiento_Inventarios
     End Sub
 
     Private Sub cmbTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipo.SelectedIndexChanged
-        If cmbTipo.SelectedIndex = 0 Then
+        If cmbTipo.SelectedIndex <> 0 Then
             txtCantidad.Text = Format(1, "0.00")
             txtCantidad.Enabled = False
         Else
-            txtCantidad.Text = Format(0, "0.00")
+            txtCantidad.Text = Format(CInt(txtCantidad.Text), "0.00")
             txtCantidad.Enabled = True
         End If
     End Sub

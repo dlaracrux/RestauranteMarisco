@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E80A91B3-8186-464D-9764-89DA799042B6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Llantera.My.MyApplication</StartupObject>
-    <RootNamespace>Llantera</RootNamespace>
-    <AssemblyName>Llantera</AssemblyName>
+    <StartupObject>RestauranteDelMarisco.My.MyApplication</StartupObject>
+    <RootNamespace>RestauranteDelMarisco</RootNamespace>
+    <AssemblyName>RestauranteDelMarisco</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Llantera.xml</DocumentationFile>
+    <DocumentationFile>RestauranteDelMarisco.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -32,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Llantera.xml</DocumentationFile>
+    <DocumentationFile>RestauranteDelMarisco.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>

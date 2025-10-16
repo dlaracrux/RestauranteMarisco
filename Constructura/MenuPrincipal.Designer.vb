@@ -382,7 +382,7 @@ Partial Class MenuPrincipal
         'imgHome
         '
         Me.imgHome.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.imgHome.Image = Global.Llantera.My.Resources.Resources.IconoRestaurante
+        Me.imgHome.Image = Global.RestauranteDelMarisco.My.Resources.Resources.IconoRestaurante
         Me.imgHome.Location = New System.Drawing.Point(25, 20)
         Me.imgHome.Name = "imgHome"
         Me.imgHome.Size = New System.Drawing.Size(145, 86)
