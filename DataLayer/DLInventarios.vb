@@ -112,7 +112,7 @@ Public Class DLInventarios
             Cmd.Parameters.Clear()
             Cmd.Parameters.AddWithValue("@nombre", elArticulo.nombre)
             Cmd.Parameters.AddWithValue("@tipo", elArticulo.tipo)
-            Cmd.Parameters.AddWithValue("@costo", elArticulo.costo)
+            'Cmd.Parameters.AddWithValue("@costo", elArticulo.costo)
             Cmd.Parameters.AddWithValue("@precio", elArticulo.precio)
             Cmd.Parameters.AddWithValue("@cantidad", elArticulo.cantidad)
             Da.SelectCommand = Cmd

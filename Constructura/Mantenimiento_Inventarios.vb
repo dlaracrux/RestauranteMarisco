@@ -29,7 +29,7 @@ Public Class Mantenimiento_Inventarios
         txtNombreArticulo.Text = ""
         cmbTipo.SelectedIndex = 0
         txtCantidad.Text = Format(0, "0.00")
-        txtCosto.Text = ""
+        'txtCosto.Text = ""
         txtPrecio.Text = ""
         txtCantidad.Enabled = True
     End Sub
@@ -54,8 +54,8 @@ Public Class Mantenimiento_Inventarios
         If Trim(txtNombreArticulo.Text) = "" Then
             MsgBox("Debe de ingregar un nombre de artículo", MsgBoxStyle.Exclamation)
             txtNombreArticulo.Text = ""
-        ElseIf txtCosto.Text = "" Then
-            MsgBox("Debe de ingregar el costo del artículo", MsgBoxStyle.Exclamation)
+            'ElseIf txtCosto.Text = "" Then
+            'MsgBox("Debe de ingregar el costo del artículo", MsgBoxStyle.Exclamation)
         ElseIf txtPrecio.Text = "" Then
             MsgBox("Debe de ingregar el precio del artículo", MsgBoxStyle.Exclamation)
         ElseIf txtCantidad.Text = "" Then
@@ -66,14 +66,14 @@ Public Class Mantenimiento_Inventarios
 
             If elArticuloSeleccionado.codigo <> 0 Then
                 elArticuloSeleccionado.nombre = Trim(txtNombreArticulo.Text)
-                elArticuloSeleccionado.costo = Trim(txtCosto.Text)
+                'elArticuloSeleccionado.costo = Trim(txtCosto.Text)
                 elArticuloSeleccionado.precio = Trim(txtPrecio.Text)
                 elArticuloSeleccionado.cantidad = Trim(txtCantidad.Text)
                 elArticuloSeleccionado.tipo = cmbTipo.SelectedIndex
                 blInventario.ModifiqueElArticulo(elArticuloSeleccionado)
             Else
                 elArticuloSeleccionado.nombre = Trim(txtNombreArticulo.Text)
-                elArticuloSeleccionado.costo = Trim(txtCosto.Text)
+                ' elArticuloSeleccionado.costo = Trim(txtCosto.Text)
                 elArticuloSeleccionado.precio = Trim(txtPrecio.Text)
                 elArticuloSeleccionado.cantidad = Trim(txtCantidad.Text)
                 elArticuloSeleccionado.tipo = cmbTipo.SelectedIndex
@@ -89,9 +89,9 @@ Public Class Mantenimiento_Inventarios
 
             elArticuloSeleccionado.codigo = CInt(dgArticulos.Item(0, e.RowIndex).Value.ToString)
             elArticuloSeleccionado.nombre = CStr(dgArticulos.Item(1, e.RowIndex).Value.ToString)
-            elArticuloSeleccionado.costo = CStr(dgArticulos.Item(3, e.RowIndex).Value.ToString)
-            elArticuloSeleccionado.precio = CStr(dgArticulos.Item(4, e.RowIndex).Value.ToString)
-            elArticuloSeleccionado.cantidad = CStr(dgArticulos.Item(5, e.RowIndex).Value.ToString)
+            'elArticuloSeleccionado.costo = CStr(dgArticulos.Item(3, e.RowIndex).Value.ToString)
+            elArticuloSeleccionado.precio = CStr(dgArticulos.Item(3, e.RowIndex).Value.ToString)
+            elArticuloSeleccionado.cantidad = CStr(dgArticulos.Item(4, e.RowIndex).Value.ToString)
 
             If CStr(dgArticulos.Item(2, e.RowIndex).Value.ToString) = "Producto" Then
                 elArticuloSeleccionado.tipo = 0
@@ -111,7 +111,7 @@ Public Class Mantenimiento_Inventarios
             End If
 
             txtNombreArticulo.Text = elArticuloSeleccionado.nombre
-            txtCosto.Text = Format(elArticuloSeleccionado.costo, "0.00")
+            ' txtCosto.Text = Format(elArticuloSeleccionado.costo, "0.00")
             txtPrecio.Text = Format(elArticuloSeleccionado.precio, "0.00")
             txtCantidad.Text = Format(elArticuloSeleccionado.cantidad, "0.00")
             cmbTipo.SelectedIndex = elArticuloSeleccionado.tipo
@@ -123,22 +123,22 @@ Public Class Mantenimiento_Inventarios
         limpiarCampos()
     End Sub
 
-    Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles txtCosto.KeyPress
-        Dim cadena As String = txtCosto.Text
-        Dim Ocurrencias As Byte = 0
-        Dim str As String() = cadena.Split(".")
-        For I As Integer = 0 To str.Length - 1
-            Ocurrencias = Ocurrencias + 1
-        Next
-        Ocurrencias = Ocurrencias - 1
-        If (Char.IsDigit(e.KeyChar) = False And e.KeyChar <> ("."c)) Or
-        (e.KeyChar = ("."c) And Ocurrencias <> 0) Then
-            e.Handled = True
-        End If
-    End Sub
+    'Private Sub TextBox1_KeyPress(ByVal sender As System.Object, ByVal e As KeyPressEventArgs)
+    '    Dim cadena As String = txtCosto.Text
+    '    Dim Ocurrencias As Byte = 0
+    '    Dim str As String() = cadena.Split(".")
+    '    For I As Integer = 0 To str.Length - 1
+    '        Ocurrencias = Ocurrencias + 1
+    '    Next
+    '    Ocurrencias = Ocurrencias - 1
+    '    If (Char.IsDigit(e.KeyChar) = False And e.KeyChar <> ("."c)) Or
+    '    (e.KeyChar = ("."c) And Ocurrencias <> 0) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
     Private Sub txtPrecio_KeyPress(ByVal sender As System.Object, ByVal e As KeyPressEventArgs) Handles txtPrecio.KeyPress
-        Dim cadena As String = txtCosto.Text
+        Dim cadena As String = txtPrecio.Text
         Dim Ocurrencias As Byte = 0
         Dim str As String() = cadena.Split(".")
         For I As Integer = 0 To str.Length - 1
@@ -171,14 +171,14 @@ Public Class Mantenimiento_Inventarios
         End If
     End Sub
 
-    Private Sub txtCosto_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCosto.KeyDown
-        If e.KeyCode = Keys.Return Then
-            Dim elCosto As Double = 0
-            Double.TryParse(txtCosto.Text, elCosto)
-            txtCosto.Text = Format(elCosto, "0.00")
-            SendKeys.Send("{TAB}")
-        End If
-    End Sub
+    'Private Sub txtCosto_KeyDown(sender As Object, e As KeyEventArgs)
+    '    If e.KeyCode = Keys.Return Then
+    '        Dim elCosto As Double = 0
+    '        Double.TryParse(txtCosto.Text, elCosto)
+    '        txtCosto.Text = Format(elCosto, "0.00")
+    '        SendKeys.Send("{TAB}")
+    '    End If
+    'End Sub
 
     Private Sub txtPrecio_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPrecio.KeyDown
         If e.KeyCode = Keys.Return Then
@@ -237,13 +237,15 @@ Public Class Mantenimiento_Inventarios
                 TablaDatos.Columns.Add("Código")
                 TablaDatos.Columns.Add("Artículo")
                 TablaDatos.Columns.Add("Tipo")
-                TablaDatos.Columns.Add("Costo")
+                'TablaDatos.Columns.Add("Costo")
                 TablaDatos.Columns.Add("Precio")
                 TablaDatos.Columns.Add("Cantidad")
                 For i As Integer = 0 To dgArticulos.Rows.Count - 1
-                    TablaDatos.Rows.Add(dgArticulos.Rows.Item(i).Cells("codigo").Value, dgArticulos.Rows.Item(i).Cells("articulo").Value,
-                                        dgArticulos.Rows.Item(i).Cells("Tipo").Value, dgArticulos.Rows.Item(i).Cells("Costo").Value,
-                                        dgArticulos.Rows.Item(i).Cells("Precio").Value, dgArticulos.Rows.Item(i).Cells("Cantidad").Value)
+                    TablaDatos.Rows.Add(dgArticulos.Rows.Item(i).Cells("codigo").Value,
+                                        dgArticulos.Rows.Item(i).Cells("articulo").Value,
+                                        dgArticulos.Rows.Item(i).Cells("Tipo").Value,
+                                        dgArticulos.Rows.Item(i).Cells("Precio").Value,
+                                        dgArticulos.Rows.Item(i).Cells("Cantidad").Value)
                 Next
                 Dim directorio As String = My.Computer.FileSystem.CurrentDirectory
                 Dim fileg As New FileInfo("C:\LlantasYMas\LlantasYMasInventario.xlsx")

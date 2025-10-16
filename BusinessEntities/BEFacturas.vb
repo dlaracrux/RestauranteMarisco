@@ -5,6 +5,8 @@
 	Public CedulaCliente As String
 	Public Usuario As Integer
 	Public TotalFactura As Decimal
+	Public TotalImpuesto As Decimal
+	Public Lugar As Integer
 	Public FormaDePago As String
 	Public Vendedor As String
 	Public Caja As String

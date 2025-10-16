@@ -192,7 +192,7 @@ Public Class DLFacturas
             With Ds.Tables(0)
                 elArticulo.codigo = CInt(.DefaultView(0)("codigo"))
                 elArticulo.cantidad = CInt(.DefaultView(0)("cantidad"))
-                elArticulo.costo = CDec(.DefaultView(0)("costo"))
+                'elArticulo.costo = CDec(.DefaultView(0)("costo"))
                 elArticulo.nombre = CStr(.DefaultView(0)("nombre"))
                 elArticulo.precio = CDec(.DefaultView(0)("precio"))
                 elArticulo.tipo = CInt(.DefaultView(0)("tipo"))

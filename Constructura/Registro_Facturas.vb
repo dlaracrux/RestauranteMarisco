@@ -26,6 +26,7 @@ Public Class Registro_Facturas
         txtNombreCliente.Text = "Cliente Contado"
         txtCedula.Text = "999999999"
         txtFechaFactura.Text = Now.ToString("dd/MM/yyyy")
+        txtTotalImpuesto.Text = Format(0, "0.00")
         txtTotalFactura.Text = Format(0, "0.00")
         txtPrecioUnitario.Text = Format(0, "0.00")
         txtCantidad.Text = Format(0, "0.00")
@@ -221,10 +222,13 @@ Public Class Registro_Facturas
 
     Private Sub AgregueElArticuloAlDetalleDeFactura()
         Dim elPrecioTotalLinea As Decimal = (CDec(txtCantidad.Text) * CDec(txtPrecioUnitario.Text))
-        Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) + elPrecioTotalLinea)
+        Dim elPrecioTotalImpuesto As Decimal = (CDec(0.13) * elPrecioTotalLinea)
+        Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) + elPrecioTotalLinea + elPrecioTotalImpuesto)
+
         dgLinea.Rows.Add(txtCodigoArticulo.Text, txtNombreArticulo.Text, txtCantidad.Text,
                          txtPrecioUnitario.Text, cmbTipo.SelectedItem,
-                         elPrecioTotalLinea, txtExistencias.Text, cmbTipo.SelectedIndex)
+                         elPrecioTotalLinea, txtExistencias.Text, cmbTipo.SelectedIndex, elPrecioTotalFactura)
+        txtTotalImpuesto.Text = Format(elPrecioTotalImpuesto, "0.00")
         txtTotalFactura.Text = Format(elPrecioTotalFactura, "0.00")
     End Sub
 
@@ -246,8 +250,10 @@ Public Class Registro_Facturas
         End If
 
         Dim elPrecioTotalLinea As Decimal = (CDec(txtCantidad.Text) * CDec(txtPrecioUnitario.Text))
-        Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) - elPrecioTotalLinea)
+        Dim elPrecioTotalImpuesto As Decimal = (CDec(txtTotalImpuesto.Text) - (CDec(0.13) * elPrecioTotalLinea))
+        Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) - elPrecioTotalLinea - (CDec(0.13) * elPrecioTotalLinea))
 
+        txtTotalImpuesto.Text = Format(elPrecioTotalImpuesto, "0.00")
         txtTotalFactura.Text = Format(elPrecioTotalFactura, "0.00")
         txtCantidad.Focus()
         txtCantidad.Select()
@@ -262,6 +268,7 @@ Public Class Registro_Facturas
                 facturaEncabezado.CedulaCliente = txtCedula.Text
                 facturaEncabezado.Usuario = atBEUsuario.IdUsuario
                 facturaEncabezado.TotalFactura = CDec(txtTotalFactura.Text)
+                facturaEncabezado.TotalImpuesto = CDec(txtTotalImpuesto.Text)
                 facturaEncabezado.FechaFactura = Now
                 facturaEncabezado.Estado = "P"
                 facturaEncabezado.Lineas = New List(Of BEFacturaLinea)
@@ -325,9 +332,26 @@ Public Class Registro_Facturas
                     dgLinea.Rows.RemoveAt(dgLinea.CurrentRow.Index)
                 End If
             Else
-                    MsgBox("Seleccione una fila", MsgBoxStyle.Exclamation)
-                End If
+                MsgBox("Seleccione una fila", MsgBoxStyle.Exclamation)
+            End If
 
         End If
     End Sub
+
+    'Private Sub chkMesada_CheckedChanged(sender As Object, e As EventArgs) Handles chkMesada.CheckedChanged
+    '    If chkMesada.Checked Then
+    '        If dgLinea.Rows.Count > 0 Then
+    '            Dim elPrecioTotalLinea As Double = 0
+    '            For Each Fila As DataGridViewRow In dgLinea.Rows
+    '                If Not Fila Is Nothing Then
+    '                    elPrecioTotalLinea = elPrecioTotalLinea + Fila.Cells("TotalPrecioConImpuesto").Value
+    '                End If
+    '            Next
+    '        End If
+
+    '    Else
+
+    '    End If
+
+    'End Sub
 End Class
