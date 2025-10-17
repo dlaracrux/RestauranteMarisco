@@ -196,7 +196,7 @@ Public Class ConsultaDeFacturas
 
         ' Tipo de Factura
         fuente = New System.Drawing.Font("Arial", 16, FontStyle.Bold)
-        Mensaje = "Restaurante Del Marisco"
+        Mensaje = "Rancho Del Marisco"
         e.Graphics.DrawString(Mensaje, fuente, Brushes.Black, 1, Num_Linea)
         Num_Linea += e.Graphics.MeasureString(Mensaje, fuente).Height
 
