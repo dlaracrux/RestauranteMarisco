@@ -22,13 +22,13 @@ Partial Class Registro_Facturas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -72,10 +72,13 @@ Partial Class Registro_Facturas
         Me.txtTotalImpuesto = New System.Windows.Forms.TextBox()
         Me.rbBarra = New System.Windows.Forms.RadioButton()
         Me.rbMesa = New System.Windows.Forms.RadioButton()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.chkImpuesto = New System.Windows.Forms.CheckBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgLinea, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -84,7 +87,7 @@ Partial Class Registro_Facturas
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1315, 49)
         Me.Panel1.TabIndex = 131
@@ -104,6 +107,7 @@ Partial Class Registro_Facturas
         'GroupBox2
         '
         Me.GroupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.GroupBox2.Controls.Add(Me.chkImpuesto)
         Me.GroupBox2.Controls.Add(Me.lblModificaPrecio)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.cmbTipo)
@@ -120,9 +124,9 @@ Partial Class Registro_Facturas
         Me.GroupBox2.Controls.Add(Me.txtCodigoArticulo)
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.GroupBox2.Location = New System.Drawing.Point(44, 257)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(1219, 148)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
@@ -160,7 +164,7 @@ Partial Class Registro_Facturas
         Me.cmbTipo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbTipo.FormattingEnabled = True
         Me.cmbTipo.Location = New System.Drawing.Point(803, 97)
-        Me.cmbTipo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbTipo.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbTipo.Name = "cmbTipo"
         Me.cmbTipo.Size = New System.Drawing.Size(141, 25)
         Me.cmbTipo.TabIndex = 5
@@ -195,7 +199,7 @@ Partial Class Registro_Facturas
         Me.txtPrecioUnitario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrecioUnitario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtPrecioUnitario.Location = New System.Drawing.Point(139, 98)
-        Me.txtPrecioUnitario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPrecioUnitario.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPrecioUnitario.Name = "txtPrecioUnitario"
         Me.txtPrecioUnitario.Size = New System.Drawing.Size(141, 23)
         Me.txtPrecioUnitario.TabIndex = 3
@@ -218,7 +222,7 @@ Partial Class Registro_Facturas
         Me.txtExistencias.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtExistencias.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtExistencias.Location = New System.Drawing.Point(803, 64)
-        Me.txtExistencias.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtExistencias.Margin = New System.Windows.Forms.Padding(4)
         Me.txtExistencias.Name = "txtExistencias"
         Me.txtExistencias.ReadOnly = True
         Me.txtExistencias.Size = New System.Drawing.Size(141, 23)
@@ -241,7 +245,7 @@ Partial Class Registro_Facturas
         Me.txtCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCantidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtCantidad.Location = New System.Drawing.Point(139, 64)
-        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCantidad.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(141, 23)
         Me.txtCantidad.TabIndex = 2
@@ -252,7 +256,7 @@ Partial Class Registro_Facturas
         Me.txtNombreArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreArticulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtNombreArticulo.Location = New System.Drawing.Point(289, 30)
-        Me.txtNombreArticulo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombreArticulo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombreArticulo.Name = "txtNombreArticulo"
         Me.txtNombreArticulo.Size = New System.Drawing.Size(655, 23)
         Me.txtNombreArticulo.TabIndex = 1
@@ -283,7 +287,7 @@ Partial Class Registro_Facturas
         Me.btnAgregarLinea.IconSize = 25
         Me.btnAgregarLinea.ImageAlign = System.Drawing.ContentAlignment.BottomLeft
         Me.btnAgregarLinea.Location = New System.Drawing.Point(1033, 94)
-        Me.btnAgregarLinea.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAgregarLinea.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAgregarLinea.Name = "btnAgregarLinea"
         Me.btnAgregarLinea.Padding = New System.Windows.Forms.Padding(13, 0, 27, 0)
         Me.btnAgregarLinea.Rotation = 0R
@@ -298,7 +302,7 @@ Partial Class Registro_Facturas
         Me.txtCodigoArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigoArticulo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtCodigoArticulo.Location = New System.Drawing.Point(139, 30)
-        Me.txtCodigoArticulo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCodigoArticulo.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCodigoArticulo.Name = "txtCodigoArticulo"
         Me.txtCodigoArticulo.Size = New System.Drawing.Size(141, 23)
         Me.txtCodigoArticulo.TabIndex = 0
@@ -316,9 +320,9 @@ Partial Class Registro_Facturas
         Me.GroupBox1.Controls.Add(Me.txtFechaFactura)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.GroupBox1.Location = New System.Drawing.Point(44, 57)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(1219, 190)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
@@ -329,7 +333,7 @@ Partial Class Registro_Facturas
         Me.txtNombreCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtNombreCliente.Location = New System.Drawing.Point(145, 23)
-        Me.txtNombreCliente.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombreCliente.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombreCliente.MaxLength = 100
         Me.txtNombreCliente.Name = "txtNombreCliente"
         Me.txtNombreCliente.Size = New System.Drawing.Size(483, 23)
@@ -389,7 +393,7 @@ Partial Class Registro_Facturas
         Me.txtVendedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtVendedor.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtVendedor.Location = New System.Drawing.Point(144, 95)
-        Me.txtVendedor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtVendedor.Margin = New System.Windows.Forms.Padding(4)
         Me.txtVendedor.MaxLength = 20
         Me.txtVendedor.Name = "txtVendedor"
         Me.txtVendedor.Size = New System.Drawing.Size(483, 23)
@@ -400,7 +404,7 @@ Partial Class Registro_Facturas
         Me.txtCedula.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCedula.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtCedula.Location = New System.Drawing.Point(145, 59)
-        Me.txtCedula.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtCedula.Margin = New System.Windows.Forms.Padding(4)
         Me.txtCedula.MaxLength = 100
         Me.txtCedula.Name = "txtCedula"
         Me.txtCedula.Size = New System.Drawing.Size(483, 23)
@@ -412,7 +416,7 @@ Partial Class Registro_Facturas
         Me.txtFechaFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFechaFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtFechaFactura.Location = New System.Drawing.Point(144, 132)
-        Me.txtFechaFactura.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtFechaFactura.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFechaFactura.MaxLength = 10
         Me.txtFechaFactura.Name = "txtFechaFactura"
         Me.txtFechaFactura.Size = New System.Drawing.Size(483, 23)
@@ -427,7 +431,7 @@ Partial Class Registro_Facturas
         Me.btnGuardar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardar.ForeColor = System.Drawing.Color.White
         Me.btnGuardar.Location = New System.Drawing.Point(441, 777)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(204, 43)
         Me.btnGuardar.TabIndex = 4
@@ -443,7 +447,7 @@ Partial Class Registro_Facturas
         Me.btnCancelar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancelar.ForeColor = System.Drawing.Color.White
         Me.btnCancelar.Location = New System.Drawing.Point(680, 777)
-        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancelar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(204, 43)
         Me.btnCancelar.TabIndex = 5
@@ -461,7 +465,7 @@ Partial Class Registro_Facturas
         Me.dgLinea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.cantidad, Me.precio, Me.tipo, Me.precioTotal, Me.existencias, Me.tipoIndex})
         Me.dgLinea.Location = New System.Drawing.Point(44, 426)
-        Me.dgLinea.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgLinea.Margin = New System.Windows.Forms.Padding(4)
         Me.dgLinea.MultiSelect = False
         Me.dgLinea.Name = "dgLinea"
         Me.dgLinea.ReadOnly = True
@@ -473,10 +477,10 @@ Partial Class Registro_Facturas
         'codigo
         '
         Me.codigo.DataPropertyName = "codigo"
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
-        Me.codigo.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.codigo.DefaultCellStyle = DataGridViewCellStyle1
         Me.codigo.HeaderText = "Código"
         Me.codigo.MinimumWidth = 6
         Me.codigo.Name = "codigo"
@@ -487,10 +491,10 @@ Partial Class Registro_Facturas
         'nombre
         '
         Me.nombre.DataPropertyName = "nombre"
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
-        Me.nombre.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.nombre.DefaultCellStyle = DataGridViewCellStyle2
         Me.nombre.HeaderText = "Artículo"
         Me.nombre.MinimumWidth = 6
         Me.nombre.Name = "nombre"
@@ -501,13 +505,13 @@ Partial Class Registro_Facturas
         'cantidad
         '
         Me.cantidad.DataPropertyName = "cantidad"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle10.Format = "N2"
-        DataGridViewCellStyle10.NullValue = Nothing
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
-        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.cantidad.DefaultCellStyle = DataGridViewCellStyle3
         Me.cantidad.HeaderText = "Cantidad"
         Me.cantidad.MinimumWidth = 6
         Me.cantidad.Name = "cantidad"
@@ -518,13 +522,13 @@ Partial Class Registro_Facturas
         'precio
         '
         Me.precio.DataPropertyName = "precio"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle11.Format = "N2"
-        DataGridViewCellStyle11.NullValue = Nothing
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
-        Me.precio.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
+        Me.precio.DefaultCellStyle = DataGridViewCellStyle4
         Me.precio.HeaderText = "Precio Unitario"
         Me.precio.MinimumWidth = 6
         Me.precio.Name = "precio"
@@ -535,11 +539,11 @@ Partial Class Registro_Facturas
         'tipo
         '
         Me.tipo.DataPropertyName = "tipo"
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        Me.tipo.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.tipo.DefaultCellStyle = DataGridViewCellStyle5
         Me.tipo.HeaderText = "Tipo"
         Me.tipo.MinimumWidth = 6
         Me.tipo.Name = "tipo"
@@ -550,12 +554,12 @@ Partial Class Registro_Facturas
         'precioTotal
         '
         Me.precioTotal.DataPropertyName = "precioTotal"
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        DataGridViewCellStyle13.Format = "N2"
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.YellowGreen
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black
-        Me.precioTotal.DefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        DataGridViewCellStyle6.Format = "N2"
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.YellowGreen
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
+        Me.precioTotal.DefaultCellStyle = DataGridViewCellStyle6
         Me.precioTotal.HeaderText = "Precio Total "
         Me.precioTotal.MinimumWidth = 6
         Me.precioTotal.Name = "precioTotal"
@@ -566,8 +570,8 @@ Partial Class Registro_Facturas
         'existencias
         '
         Me.existencias.DataPropertyName = "existencias"
-        DataGridViewCellStyle14.Format = "N2"
-        Me.existencias.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle7.Format = "N2"
+        Me.existencias.DefaultCellStyle = DataGridViewCellStyle7
         Me.existencias.HeaderText = "Existencias"
         Me.existencias.MinimumWidth = 6
         Me.existencias.Name = "existencias"
@@ -606,7 +610,7 @@ Partial Class Registro_Facturas
         Me.txtTotalFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotalFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.txtTotalFactura.Location = New System.Drawing.Point(1104, 721)
-        Me.txtTotalFactura.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTotalFactura.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTotalFactura.MaxLength = 10
         Me.txtTotalFactura.Name = "txtTotalFactura"
         Me.txtTotalFactura.Size = New System.Drawing.Size(159, 23)
@@ -646,7 +650,7 @@ Partial Class Registro_Facturas
         Me.rbBarra.AutoSize = True
         Me.rbBarra.Checked = True
         Me.rbBarra.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.rbBarra.Location = New System.Drawing.Point(44, 777)
+        Me.rbBarra.Location = New System.Drawing.Point(11, 21)
         Me.rbBarra.Name = "rbBarra"
         Me.rbBarra.Size = New System.Drawing.Size(61, 20)
         Me.rbBarra.TabIndex = 139
@@ -659,12 +663,32 @@ Partial Class Registro_Facturas
         Me.rbMesa.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.rbMesa.AutoSize = True
         Me.rbMesa.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.rbMesa.Location = New System.Drawing.Point(44, 805)
+        Me.rbMesa.Location = New System.Drawing.Point(11, 47)
         Me.rbMesa.Name = "rbMesa"
         Me.rbMesa.Size = New System.Drawing.Size(62, 20)
         Me.rbMesa.TabIndex = 140
         Me.rbMesa.Text = "Mesa"
         Me.rbMesa.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.rbBarra)
+        Me.GroupBox3.Controls.Add(Me.rbMesa)
+        Me.GroupBox3.Location = New System.Drawing.Point(44, 726)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(83, 79)
+        Me.GroupBox3.TabIndex = 141
+        Me.GroupBox3.TabStop = False
+        '
+        'chkImpuesto
+        '
+        Me.chkImpuesto.AutoSize = True
+        Me.chkImpuesto.Location = New System.Drawing.Point(437, 108)
+        Me.chkImpuesto.Name = "chkImpuesto"
+        Me.chkImpuesto.Size = New System.Drawing.Size(129, 20)
+        Me.chkImpuesto.TabIndex = 139
+        Me.chkImpuesto.Text = "Aplicar Impuesto"
+        Me.chkImpuesto.UseVisualStyleBackColor = True
         '
         'Registro_Facturas
         '
@@ -672,8 +696,7 @@ Partial Class Registro_Facturas
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(74, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1315, 874)
-        Me.Controls.Add(Me.rbBarra)
-        Me.Controls.Add(Me.rbMesa)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.lblTotalImpuesto)
         Me.Controls.Add(Me.txtTotalImpuesto)
         Me.Controls.Add(Me.Label5)
@@ -684,7 +707,7 @@ Partial Class Registro_Facturas
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.Panel1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Registro_Facturas"
         Me.Text = "Registro Facturas"
         Me.Panel1.ResumeLayout(False)
@@ -694,6 +717,8 @@ Partial Class Registro_Facturas
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgLinea, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -741,4 +766,6 @@ Partial Class Registro_Facturas
     Friend WithEvents txtTotalImpuesto As TextBox
     Friend WithEvents rbBarra As RadioButton
     Friend WithEvents rbMesa As RadioButton
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents chkImpuesto As CheckBox
 End Class
