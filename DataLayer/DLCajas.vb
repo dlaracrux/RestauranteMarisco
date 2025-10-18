@@ -75,6 +75,7 @@ Public Class DLCajas
             Cmd.CommandText = "SP_ActualiceElEstadoDeFacturaCancelada"
             Cmd.Parameters.Clear()
             Cmd.Parameters.AddWithValue("@CodigoFactura", elCodigoFacturaSeleccionada)
+            Cmd.Parameters.AddWithValue("@Estado", "C")
             Cmd.ExecuteNonQuery()
 
             transaccion.Commit()

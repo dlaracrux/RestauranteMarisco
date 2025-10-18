@@ -31,6 +31,13 @@ Partial Class FrmCajas
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgFacturas = New System.Windows.Forms.DataGridView()
+        Me.seleccionaFactura = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn()
+        Me.codigoFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalImpuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lEstadoMoneda = New System.Windows.Forms.Label()
         Me.lNombreMoneda = New System.Windows.Forms.Label()
         Me.txtNombreUsuario = New System.Windows.Forms.TextBox()
@@ -44,19 +51,13 @@ Partial Class FrmCajas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCaja = New System.Windows.Forms.TextBox()
         Me.panelFacturas = New System.Windows.Forms.Panel()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.lblPendientes = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCerrarCaja = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnProcesar = New System.Windows.Forms.Button()
-        Me.seleccionaFactura = New ComponentFactory.Krypton.Toolkit.KryptonDataGridViewCheckBoxColumn()
-        Me.codigoFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.totalFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.vendedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.totalImpuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgFacturas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panelAbrirCaja.SuspendLayout()
@@ -70,7 +71,7 @@ Partial Class FrmCajas
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1401, 49)
         Me.Panel1.TabIndex = 9
@@ -98,7 +99,7 @@ Partial Class FrmCajas
         Me.dgFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgFacturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.seleccionaFactura, Me.codigoFactura, Me.cliente, Me.fechaFactura, Me.totalFactura, Me.vendedor, Me.totalImpuesto})
         Me.dgFacturas.Location = New System.Drawing.Point(23, 49)
-        Me.dgFacturas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dgFacturas.Margin = New System.Windows.Forms.Padding(4)
         Me.dgFacturas.MultiSelect = False
         Me.dgFacturas.Name = "dgFacturas"
         Me.dgFacturas.ReadOnly = True
@@ -106,265 +107,6 @@ Partial Class FrmCajas
         Me.dgFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgFacturas.Size = New System.Drawing.Size(1320, 596)
         Me.dgFacturas.TabIndex = 131
-        '
-        'lEstadoMoneda
-        '
-        Me.lEstadoMoneda.AutoSize = True
-        Me.lEstadoMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lEstadoMoneda.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lEstadoMoneda.Location = New System.Drawing.Point(75, 101)
-        Me.lEstadoMoneda.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lEstadoMoneda.Name = "lEstadoMoneda"
-        Me.lEstadoMoneda.Size = New System.Drawing.Size(36, 17)
-        Me.lEstadoMoneda.TabIndex = 126
-        Me.lEstadoMoneda.Text = "Caja"
-        '
-        'lNombreMoneda
-        '
-        Me.lNombreMoneda.AutoSize = True
-        Me.lNombreMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lNombreMoneda.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lNombreMoneda.Location = New System.Drawing.Point(55, 58)
-        Me.lNombreMoneda.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lNombreMoneda.Name = "lNombreMoneda"
-        Me.lNombreMoneda.Size = New System.Drawing.Size(57, 17)
-        Me.lNombreMoneda.TabIndex = 125
-        Me.lNombreMoneda.Text = "Usuario"
-        '
-        'txtNombreUsuario
-        '
-        Me.txtNombreUsuario.Enabled = False
-        Me.txtNombreUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreUsuario.Location = New System.Drawing.Point(136, 53)
-        Me.txtNombreUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtNombreUsuario.Name = "txtNombreUsuario"
-        Me.txtNombreUsuario.Size = New System.Drawing.Size(233, 23)
-        Me.txtNombreUsuario.TabIndex = 0
-        '
-        'panelAbrirCaja
-        '
-        Me.panelAbrirCaja.Controls.Add(Me.btnCerrar)
-        Me.panelAbrirCaja.Controls.Add(Me.btnIniciar)
-        Me.panelAbrirCaja.Controls.Add(Me.GroupBox1)
-        Me.panelAbrirCaja.Location = New System.Drawing.Point(0, 57)
-        Me.panelAbrirCaja.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.panelAbrirCaja.Name = "panelAbrirCaja"
-        Me.panelAbrirCaja.Size = New System.Drawing.Size(1383, 738)
-        Me.panelAbrirCaja.TabIndex = 0
-        '
-        'btnCerrar
-        '
-        Me.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnCerrar.BackColor = System.Drawing.Color.Brown
-        Me.btnCerrar.FlatAppearance.BorderSize = 0
-        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCerrar.ForeColor = System.Drawing.Color.White
-        Me.btnCerrar.Location = New System.Drawing.Point(717, 378)
-        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(204, 39)
-        Me.btnCerrar.TabIndex = 132
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = False
-        '
-        'btnIniciar
-        '
-        Me.btnIniciar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnIniciar.BackColor = System.Drawing.Color.SeaGreen
-        Me.btnIniciar.FlatAppearance.BorderSize = 0
-        Me.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIniciar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIniciar.ForeColor = System.Drawing.Color.White
-        Me.btnIniciar.Location = New System.Drawing.Point(488, 378)
-        Me.btnIniciar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnIniciar.Name = "btnIniciar"
-        Me.btnIniciar.Size = New System.Drawing.Size(204, 39)
-        Me.btnIniciar.TabIndex = 131
-        Me.btnIniciar.Text = "Iniciar"
-        Me.btnIniciar.UseVisualStyleBackColor = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.GroupBox1.Controls.Add(Me.txtMontoInicial)
-        Me.GroupBox1.Controls.Add(Me.txtFechaInicial)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txtCaja)
-        Me.GroupBox1.Controls.Add(Me.txtNombreUsuario)
-        Me.GroupBox1.Controls.Add(Me.lEstadoMoneda)
-        Me.GroupBox1.Controls.Add(Me.lNombreMoneda)
-        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox1.Location = New System.Drawing.Point(241, 121)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(909, 166)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "  Datos Apertura Caja  "
-        '
-        'txtMontoInicial
-        '
-        Me.txtMontoInicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMontoInicial.Location = New System.Drawing.Point(569, 96)
-        Me.txtMontoInicial.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtMontoInicial.Name = "txtMontoInicial"
-        Me.txtMontoInicial.Size = New System.Drawing.Size(233, 23)
-        Me.txtMontoInicial.TabIndex = 4
-        '
-        'txtFechaInicial
-        '
-        Me.txtFechaInicial.Enabled = False
-        Me.txtFechaInicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFechaInicial.Location = New System.Drawing.Point(569, 53)
-        Me.txtFechaInicial.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtFechaInicial.Name = "txtFechaInicial"
-        Me.txtFechaInicial.Size = New System.Drawing.Size(233, 23)
-        Me.txtFechaInicial.TabIndex = 3
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(457, 101)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 17)
-        Me.Label3.TabIndex = 129
-        Me.Label3.Text = "Monto Inicial"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(497, 58)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 17)
-        Me.Label2.TabIndex = 128
-        Me.Label2.Text = "Fecha"
-        '
-        'txtCaja
-        '
-        Me.txtCaja.Enabled = False
-        Me.txtCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCaja.Location = New System.Drawing.Point(136, 96)
-        Me.txtCaja.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtCaja.Name = "txtCaja"
-        Me.txtCaja.Size = New System.Drawing.Size(233, 23)
-        Me.txtCaja.TabIndex = 1
-        '
-        'panelFacturas
-        '
-        Me.panelFacturas.Controls.Add(Me.lblPendientes)
-        Me.panelFacturas.Controls.Add(Me.btnActualizar)
-        Me.panelFacturas.Controls.Add(Me.btnCerrarCaja)
-        Me.panelFacturas.Controls.Add(Me.Label5)
-        Me.panelFacturas.Controls.Add(Me.dgFacturas)
-        Me.panelFacturas.Controls.Add(Me.btnSalir)
-        Me.panelFacturas.Controls.Add(Me.btnProcesar)
-        Me.panelFacturas.Location = New System.Drawing.Point(23, 60)
-        Me.panelFacturas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.panelFacturas.Name = "panelFacturas"
-        Me.panelFacturas.Size = New System.Drawing.Size(1356, 731)
-        Me.panelFacturas.TabIndex = 133
-        '
-        'lblPendientes
-        '
-        Me.lblPendientes.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblPendientes.AutoSize = True
-        Me.lblPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPendientes.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.lblPendientes.Location = New System.Drawing.Point(1105, 14)
-        Me.lblPendientes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblPendientes.Name = "lblPendientes"
-        Me.lblPendientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.lblPendientes.Size = New System.Drawing.Size(224, 24)
-        Me.lblPendientes.TabIndex = 134
-        Me.lblPendientes.Text = "Facturas Pendientes: 0"
-        '
-        'btnActualizar
-        '
-        Me.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnActualizar.BackColor = System.Drawing.Color.SeaGreen
-        Me.btnActualizar.Enabled = False
-        Me.btnActualizar.FlatAppearance.BorderSize = 0
-        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnActualizar.ForeColor = System.Drawing.Color.White
-        Me.btnActualizar.Location = New System.Drawing.Point(23, 670)
-        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(204, 39)
-        Me.btnActualizar.TabIndex = 133
-        Me.btnActualizar.Text = "Actualizar"
-        Me.btnActualizar.UseVisualStyleBackColor = False
-        '
-        'btnCerrarCaja
-        '
-        Me.btnCerrarCaja.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnCerrarCaja.BackColor = System.Drawing.Color.Chocolate
-        Me.btnCerrarCaja.FlatAppearance.BorderSize = 0
-        Me.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCerrarCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCerrarCaja.ForeColor = System.Drawing.Color.White
-        Me.btnCerrarCaja.Location = New System.Drawing.Point(1139, 670)
-        Me.btnCerrarCaja.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnCerrarCaja.Name = "btnCerrarCaja"
-        Me.btnCerrarCaja.Size = New System.Drawing.Size(204, 39)
-        Me.btnCerrarCaja.TabIndex = 132
-        Me.btnCerrarCaja.Text = "Cerrar Caja"
-        Me.btnCerrarCaja.UseVisualStyleBackColor = False
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label5.Location = New System.Drawing.Point(17, 14)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(395, 25)
-        Me.Label5.TabIndex = 1
-        Me.Label5.Text = "Seleccione una factura que desee procesar:"
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnSalir.BackColor = System.Drawing.Color.Brown
-        Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.ForeColor = System.Drawing.Color.White
-        Me.btnSalir.Location = New System.Drawing.Point(665, 670)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(204, 39)
-        Me.btnSalir.TabIndex = 130
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = False
-        '
-        'btnProcesar
-        '
-        Me.btnProcesar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnProcesar.BackColor = System.Drawing.Color.SeaGreen
-        Me.btnProcesar.Enabled = False
-        Me.btnProcesar.FlatAppearance.BorderSize = 0
-        Me.btnProcesar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnProcesar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProcesar.ForeColor = System.Drawing.Color.White
-        Me.btnProcesar.Location = New System.Drawing.Point(436, 670)
-        Me.btnProcesar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.btnProcesar.Name = "btnProcesar"
-        Me.btnProcesar.Size = New System.Drawing.Size(204, 39)
-        Me.btnProcesar.TabIndex = 129
-        Me.btnProcesar.Text = "Procesar"
-        Me.btnProcesar.UseVisualStyleBackColor = False
         '
         'seleccionaFactura
         '
@@ -468,6 +210,283 @@ Partial Class FrmCajas
         Me.totalImpuesto.Visible = False
         Me.totalImpuesto.Width = 125
         '
+        'lEstadoMoneda
+        '
+        Me.lEstadoMoneda.AutoSize = True
+        Me.lEstadoMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lEstadoMoneda.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lEstadoMoneda.Location = New System.Drawing.Point(75, 101)
+        Me.lEstadoMoneda.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lEstadoMoneda.Name = "lEstadoMoneda"
+        Me.lEstadoMoneda.Size = New System.Drawing.Size(36, 17)
+        Me.lEstadoMoneda.TabIndex = 126
+        Me.lEstadoMoneda.Text = "Caja"
+        '
+        'lNombreMoneda
+        '
+        Me.lNombreMoneda.AutoSize = True
+        Me.lNombreMoneda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lNombreMoneda.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lNombreMoneda.Location = New System.Drawing.Point(55, 58)
+        Me.lNombreMoneda.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lNombreMoneda.Name = "lNombreMoneda"
+        Me.lNombreMoneda.Size = New System.Drawing.Size(57, 17)
+        Me.lNombreMoneda.TabIndex = 125
+        Me.lNombreMoneda.Text = "Usuario"
+        '
+        'txtNombreUsuario
+        '
+        Me.txtNombreUsuario.Enabled = False
+        Me.txtNombreUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreUsuario.Location = New System.Drawing.Point(136, 53)
+        Me.txtNombreUsuario.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombreUsuario.Name = "txtNombreUsuario"
+        Me.txtNombreUsuario.Size = New System.Drawing.Size(233, 23)
+        Me.txtNombreUsuario.TabIndex = 0
+        '
+        'panelAbrirCaja
+        '
+        Me.panelAbrirCaja.Controls.Add(Me.btnCerrar)
+        Me.panelAbrirCaja.Controls.Add(Me.btnIniciar)
+        Me.panelAbrirCaja.Controls.Add(Me.GroupBox1)
+        Me.panelAbrirCaja.Location = New System.Drawing.Point(0, 57)
+        Me.panelAbrirCaja.Margin = New System.Windows.Forms.Padding(4)
+        Me.panelAbrirCaja.Name = "panelAbrirCaja"
+        Me.panelAbrirCaja.Size = New System.Drawing.Size(1383, 738)
+        Me.panelAbrirCaja.TabIndex = 0
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnCerrar.BackColor = System.Drawing.Color.Brown
+        Me.btnCerrar.FlatAppearance.BorderSize = 0
+        Me.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrar.ForeColor = System.Drawing.Color.White
+        Me.btnCerrar.Location = New System.Drawing.Point(717, 378)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(204, 39)
+        Me.btnCerrar.TabIndex = 132
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = False
+        '
+        'btnIniciar
+        '
+        Me.btnIniciar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnIniciar.BackColor = System.Drawing.Color.SeaGreen
+        Me.btnIniciar.FlatAppearance.BorderSize = 0
+        Me.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnIniciar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIniciar.ForeColor = System.Drawing.Color.White
+        Me.btnIniciar.Location = New System.Drawing.Point(488, 378)
+        Me.btnIniciar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnIniciar.Name = "btnIniciar"
+        Me.btnIniciar.Size = New System.Drawing.Size(204, 39)
+        Me.btnIniciar.TabIndex = 131
+        Me.btnIniciar.Text = "Iniciar"
+        Me.btnIniciar.UseVisualStyleBackColor = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.GroupBox1.Controls.Add(Me.txtMontoInicial)
+        Me.GroupBox1.Controls.Add(Me.txtFechaInicial)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.txtCaja)
+        Me.GroupBox1.Controls.Add(Me.txtNombreUsuario)
+        Me.GroupBox1.Controls.Add(Me.lEstadoMoneda)
+        Me.GroupBox1.Controls.Add(Me.lNombreMoneda)
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox1.Location = New System.Drawing.Point(241, 121)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Size = New System.Drawing.Size(909, 166)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "  Datos Apertura Caja  "
+        '
+        'txtMontoInicial
+        '
+        Me.txtMontoInicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMontoInicial.Location = New System.Drawing.Point(569, 96)
+        Me.txtMontoInicial.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtMontoInicial.Name = "txtMontoInicial"
+        Me.txtMontoInicial.Size = New System.Drawing.Size(233, 23)
+        Me.txtMontoInicial.TabIndex = 4
+        '
+        'txtFechaInicial
+        '
+        Me.txtFechaInicial.Enabled = False
+        Me.txtFechaInicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFechaInicial.Location = New System.Drawing.Point(569, 53)
+        Me.txtFechaInicial.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtFechaInicial.Name = "txtFechaInicial"
+        Me.txtFechaInicial.Size = New System.Drawing.Size(233, 23)
+        Me.txtFechaInicial.TabIndex = 3
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label3.Location = New System.Drawing.Point(457, 101)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(86, 17)
+        Me.Label3.TabIndex = 129
+        Me.Label3.Text = "Monto Inicial"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(497, 58)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(47, 17)
+        Me.Label2.TabIndex = 128
+        Me.Label2.Text = "Fecha"
+        '
+        'txtCaja
+        '
+        Me.txtCaja.Enabled = False
+        Me.txtCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCaja.Location = New System.Drawing.Point(136, 96)
+        Me.txtCaja.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCaja.Name = "txtCaja"
+        Me.txtCaja.Size = New System.Drawing.Size(233, 23)
+        Me.txtCaja.TabIndex = 1
+        '
+        'panelFacturas
+        '
+        Me.panelFacturas.Controls.Add(Me.btnEliminar)
+        Me.panelFacturas.Controls.Add(Me.lblPendientes)
+        Me.panelFacturas.Controls.Add(Me.btnActualizar)
+        Me.panelFacturas.Controls.Add(Me.btnCerrarCaja)
+        Me.panelFacturas.Controls.Add(Me.Label5)
+        Me.panelFacturas.Controls.Add(Me.dgFacturas)
+        Me.panelFacturas.Controls.Add(Me.btnSalir)
+        Me.panelFacturas.Controls.Add(Me.btnProcesar)
+        Me.panelFacturas.Location = New System.Drawing.Point(23, 60)
+        Me.panelFacturas.Margin = New System.Windows.Forms.Padding(4)
+        Me.panelFacturas.Name = "panelFacturas"
+        Me.panelFacturas.Size = New System.Drawing.Size(1356, 731)
+        Me.panelFacturas.TabIndex = 133
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnEliminar.BackColor = System.Drawing.Color.Crimson
+        Me.btnEliminar.Enabled = False
+        Me.btnEliminar.FlatAppearance.BorderSize = 0
+        Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEliminar.ForeColor = System.Drawing.Color.White
+        Me.btnEliminar.Location = New System.Drawing.Point(425, 670)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(151, 39)
+        Me.btnEliminar.TabIndex = 135
+        Me.btnEliminar.Text = "Eliminar Factura"
+        Me.btnEliminar.UseVisualStyleBackColor = False
+        '
+        'lblPendientes
+        '
+        Me.lblPendientes.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblPendientes.AutoSize = True
+        Me.lblPendientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPendientes.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblPendientes.Location = New System.Drawing.Point(1105, 14)
+        Me.lblPendientes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPendientes.Name = "lblPendientes"
+        Me.lblPendientes.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.lblPendientes.Size = New System.Drawing.Size(224, 24)
+        Me.lblPendientes.TabIndex = 134
+        Me.lblPendientes.Text = "Facturas Pendientes: 0"
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnActualizar.BackColor = System.Drawing.Color.SeaGreen
+        Me.btnActualizar.Enabled = False
+        Me.btnActualizar.FlatAppearance.BorderSize = 0
+        Me.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActualizar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActualizar.ForeColor = System.Drawing.Color.White
+        Me.btnActualizar.Location = New System.Drawing.Point(23, 670)
+        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(114, 39)
+        Me.btnActualizar.TabIndex = 133
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = False
+        '
+        'btnCerrarCaja
+        '
+        Me.btnCerrarCaja.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnCerrarCaja.BackColor = System.Drawing.Color.Chocolate
+        Me.btnCerrarCaja.FlatAppearance.BorderSize = 0
+        Me.btnCerrarCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCerrarCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCerrarCaja.ForeColor = System.Drawing.Color.White
+        Me.btnCerrarCaja.Location = New System.Drawing.Point(1054, 670)
+        Me.btnCerrarCaja.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCerrarCaja.Name = "btnCerrarCaja"
+        Me.btnCerrarCaja.Size = New System.Drawing.Size(151, 39)
+        Me.btnCerrarCaja.TabIndex = 132
+        Me.btnCerrarCaja.Text = "Cerrar Caja"
+        Me.btnCerrarCaja.UseVisualStyleBackColor = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label5.Location = New System.Drawing.Point(17, 14)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(395, 25)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Seleccione una factura que desee procesar:"
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnSalir.BackColor = System.Drawing.Color.Brown
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.ForeColor = System.Drawing.Color.White
+        Me.btnSalir.Location = New System.Drawing.Point(1225, 670)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(118, 39)
+        Me.btnSalir.TabIndex = 130
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = False
+        '
+        'btnProcesar
+        '
+        Me.btnProcesar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnProcesar.BackColor = System.Drawing.Color.SeaGreen
+        Me.btnProcesar.Enabled = False
+        Me.btnProcesar.FlatAppearance.BorderSize = 0
+        Me.btnProcesar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnProcesar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProcesar.ForeColor = System.Drawing.Color.White
+        Me.btnProcesar.Location = New System.Drawing.Point(254, 670)
+        Me.btnProcesar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnProcesar.Name = "btnProcesar"
+        Me.btnProcesar.Size = New System.Drawing.Size(151, 39)
+        Me.btnProcesar.TabIndex = 129
+        Me.btnProcesar.Text = "Procesar"
+        Me.btnProcesar.UseVisualStyleBackColor = False
+        '
         'FrmCajas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -477,7 +496,7 @@ Partial Class FrmCajas
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.panelFacturas)
         Me.Controls.Add(Me.panelAbrirCaja)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmCajas"
         Me.Text = "Cajas"
         Me.Panel1.ResumeLayout(False)
@@ -521,4 +540,5 @@ Partial Class FrmCajas
     Friend WithEvents totalFactura As DataGridViewTextBoxColumn
     Friend WithEvents vendedor As DataGridViewTextBoxColumn
     Friend WithEvents totalImpuesto As DataGridViewTextBoxColumn
+    Friend WithEvents btnEliminar As Button
 End Class

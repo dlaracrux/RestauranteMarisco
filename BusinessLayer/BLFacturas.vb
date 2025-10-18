@@ -53,4 +53,8 @@ Public Class BLFacturas
         Dim dlFacturas As New DLFacturas
         Return dlFacturas.CargueElDetalleDeLaFacturaSeleccionada(codigo)
     End Function
+    Public Function ElimineLaFacturaSeleccionada(ByVal elCodigoFacturaSeleccionada As Integer) As Boolean
+        Dim dlFacturas As New DLFacturas
+        Return dlFacturas.ElimineLaFacturaSeleccionada(elCodigoFacturaSeleccionada)
+    End Function
 End Class

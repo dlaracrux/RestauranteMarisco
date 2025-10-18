@@ -258,4 +258,46 @@ Public Class DLFacturas
             Return Nothing
         End If
     End Function
+
+    Public Function ElimineLaFacturaSeleccionada(ByVal elCodigoFacturaSeleccionada As Integer) As Boolean
+        DefineStrConexion()
+
+        Dim cnn As SqlConnection
+        Dim Cmd As New SqlCommand
+        Dim Ds As New DataSet
+        Dim Da As New SqlDataAdapter
+        Dim transaccion As SqlTransaction
+        Dim codigoCancelacion As Integer
+
+        cnn = New SqlConnection(DBSistemaCnnStr)
+        cnn.Open()
+        transaccion = cnn.BeginTransaction("ElimineLaFactura")
+
+        Try
+            Cmd.Connection = cnn
+            Cmd.Transaction = transaccion
+            Cmd.CommandType = CommandType.StoredProcedure
+            Cmd.CommandText = "SP_ActualiceElEstadoDeFacturaCancelada"
+            Cmd.Parameters.Clear()
+            Cmd.Parameters.AddWithValue("@CodigoFactura", elCodigoFacturaSeleccionada)
+            Cmd.Parameters.AddWithValue("@Estado", "E")
+            Cmd.ExecuteNonQuery()
+
+            transaccion.Commit()
+            cnn.Close()
+            MsgBox("La factura: " + CStr(elCodigoFacturaSeleccionada) + " fue eliminada correctamente", MsgBoxStyle.Information, "Cancelaciones")
+            Return True
+        Catch ex As SqlException
+            transaccion.Rollback()
+            cnn.Close()
+            MsgBox("No se ha podido procesar la factura. Intente de nuevo.", MsgBoxStyle.Critical, "Cancelaciones")
+            Return False
+        Catch ex As Exception
+            transaccion.Rollback()
+            cnn.Close()
+            MsgBox("No se ha podido procesar la factura. Intente de nuevo.", MsgBoxStyle.Critical, "Cancelaciones")
+            Return False
+        End Try
+    End Function
+
 End Class

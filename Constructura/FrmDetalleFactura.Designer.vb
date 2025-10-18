@@ -34,13 +34,13 @@ Partial Class FrmDetalleFactura
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dgDetalle = New System.Windows.Forms.DataGridView()
+        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.codigoDetalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codigoFactura = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombreArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioUnitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnRegresar = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,8 +51,9 @@ Partial Class FrmDetalleFactura
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1050, 40)
+        Me.Panel1.Size = New System.Drawing.Size(1400, 49)
         Me.Panel1.TabIndex = 46
         '
         'Label7
@@ -60,9 +61,10 @@ Partial Class FrmDetalleFactura
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label7.Location = New System.Drawing.Point(13, 10)
+        Me.Label7.Location = New System.Drawing.Point(17, 12)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(158, 20)
+        Me.Label7.Size = New System.Drawing.Size(190, 25)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = ">> Detalle Factura"
         '
@@ -83,6 +85,7 @@ Partial Class FrmDetalleFactura
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgDetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgDetalle.ColumnHeadersHeight = 29
         Me.dgDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgDetalle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigoDetalle, Me.codigoFactura, Me.nombreArticulo, Me.cantidad, Me.total, Me.precioUnitario})
         DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -93,7 +96,8 @@ Partial Class FrmDetalleFactura
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgDetalle.DefaultCellStyle = DataGridViewCellStyle8
-        Me.dgDetalle.Location = New System.Drawing.Point(17, 46)
+        Me.dgDetalle.Location = New System.Drawing.Point(23, 57)
+        Me.dgDetalle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgDetalle.MultiSelect = False
         Me.dgDetalle.Name = "dgDetalle"
         Me.dgDetalle.ReadOnly = True
@@ -107,8 +111,24 @@ Partial Class FrmDetalleFactura
         Me.dgDetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgDetalle.RowHeadersWidth = 5
         Me.dgDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgDetalle.Size = New System.Drawing.Size(999, 390)
+        Me.dgDetalle.Size = New System.Drawing.Size(1332, 480)
         Me.dgDetalle.TabIndex = 169
+        '
+        'btnRegresar
+        '
+        Me.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnRegresar.BackColor = System.Drawing.Color.Brown
+        Me.btnRegresar.FlatAppearance.BorderSize = 0
+        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRegresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRegresar.ForeColor = System.Drawing.Color.White
+        Me.btnRegresar.Location = New System.Drawing.Point(1151, 545)
+        Me.btnRegresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRegresar.Name = "btnRegresar"
+        Me.btnRegresar.Size = New System.Drawing.Size(204, 43)
+        Me.btnRegresar.TabIndex = 170
+        Me.btnRegresar.Text = "Regresar"
+        Me.btnRegresar.UseVisualStyleBackColor = False
         '
         'codigoDetalle
         '
@@ -117,8 +137,10 @@ Partial Class FrmDetalleFactura
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
         Me.codigoDetalle.DefaultCellStyle = DataGridViewCellStyle2
         Me.codigoDetalle.HeaderText = "Código Det."
+        Me.codigoDetalle.MinimumWidth = 6
         Me.codigoDetalle.Name = "codigoDetalle"
         Me.codigoDetalle.ReadOnly = True
+        Me.codigoDetalle.Visible = False
         Me.codigoDetalle.Width = 70
         '
         'codigoFactura
@@ -129,11 +151,11 @@ Partial Class FrmDetalleFactura
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
         Me.codigoFactura.DefaultCellStyle = DataGridViewCellStyle3
         Me.codigoFactura.HeaderText = "Código Art."
+        Me.codigoFactura.MinimumWidth = 6
         Me.codigoFactura.Name = "codigoFactura"
         Me.codigoFactura.ReadOnly = True
         Me.codigoFactura.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.codigoFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.codigoFactura.Width = 70
         '
         'nombreArticulo
         '
@@ -143,6 +165,7 @@ Partial Class FrmDetalleFactura
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black
         Me.nombreArticulo.DefaultCellStyle = DataGridViewCellStyle4
         Me.nombreArticulo.HeaderText = "Nombre Artículo"
+        Me.nombreArticulo.MinimumWidth = 6
         Me.nombreArticulo.Name = "nombreArticulo"
         Me.nombreArticulo.ReadOnly = True
         Me.nombreArticulo.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -158,6 +181,7 @@ Partial Class FrmDetalleFactura
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
         Me.cantidad.DefaultCellStyle = DataGridViewCellStyle5
         Me.cantidad.HeaderText = "Cantidad"
+        Me.cantidad.MinimumWidth = 6
         Me.cantidad.Name = "cantidad"
         Me.cantidad.ReadOnly = True
         Me.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -174,6 +198,7 @@ Partial Class FrmDetalleFactura
         DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
         Me.total.DefaultCellStyle = DataGridViewCellStyle6
         Me.total.HeaderText = "Total"
+        Me.total.MinimumWidth = 6
         Me.total.Name = "total"
         Me.total.ReadOnly = True
         Me.total.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
@@ -189,34 +214,21 @@ Partial Class FrmDetalleFactura
         DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
         Me.precioUnitario.DefaultCellStyle = DataGridViewCellStyle7
         Me.precioUnitario.HeaderText = "Precio Uni."
+        Me.precioUnitario.MinimumWidth = 6
         Me.precioUnitario.Name = "precioUnitario"
         Me.precioUnitario.ReadOnly = True
         Me.precioUnitario.Width = 130
         '
-        'btnRegresar
-        '
-        Me.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnRegresar.BackColor = System.Drawing.Color.Brown
-        Me.btnRegresar.FlatAppearance.BorderSize = 0
-        Me.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRegresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegresar.ForeColor = System.Drawing.Color.White
-        Me.btnRegresar.Location = New System.Drawing.Point(863, 443)
-        Me.btnRegresar.Name = "btnRegresar"
-        Me.btnRegresar.Size = New System.Drawing.Size(153, 35)
-        Me.btnRegresar.TabIndex = 170
-        Me.btnRegresar.Text = "Regresar"
-        Me.btnRegresar.UseVisualStyleBackColor = False
-        '
         'FrmDetalleFactura
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(34, Byte), Integer), CType(CType(33, Byte), Integer), CType(CType(74, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1050, 490)
+        Me.ClientSize = New System.Drawing.Size(1400, 603)
         Me.Controls.Add(Me.btnRegresar)
         Me.Controls.Add(Me.dgDetalle)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FrmDetalleFactura"
@@ -232,11 +244,11 @@ Partial Class FrmDetalleFactura
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label7 As Label
     Friend WithEvents dgDetalle As DataGridView
+    Friend WithEvents btnRegresar As Button
     Friend WithEvents codigoDetalle As DataGridViewTextBoxColumn
     Friend WithEvents codigoFactura As DataGridViewTextBoxColumn
     Friend WithEvents nombreArticulo As DataGridViewTextBoxColumn
     Friend WithEvents cantidad As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
     Friend WithEvents precioUnitario As DataGridViewTextBoxColumn
-    Friend WithEvents btnRegresar As Button
 End Class

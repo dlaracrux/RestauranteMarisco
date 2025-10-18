@@ -154,7 +154,7 @@ Public Class Registro_Facturas
         Dim cantidadConsultada As Integer = 0
         If Not txtCodigoArticulo.Text = "" Then
             If CInt(txtCantidad.Text) > 0 Then
-                If cmbTipo.SelectedIndex = 0 Then
+                If cmbTipo.SelectedIndex <> 0 Then
                     If dgLinea.Rows.Count > 0 Then
                         For Each Fila As DataGridViewRow In dgLinea.Rows
                             If Not Fila Is Nothing Then

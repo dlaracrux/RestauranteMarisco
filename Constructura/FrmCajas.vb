@@ -38,6 +38,7 @@ Public Class FrmCajas
             panelFacturas.Visible = True
             dgFacturas.Enabled = False
             btnProcesar.Enabled = False
+            btnEliminar.Enabled = False
             btnCerrarCaja.Focus()
         End If
 
@@ -88,6 +89,7 @@ Public Class FrmCajas
             elIdFacturaSeleccionada = dgFacturas.Rows.Item(e.RowIndex).Cells.Item("codigoFactura").Value
             elIndexDeFacturaSeleccionada = e.RowIndex
             btnProcesar.Enabled = True
+            btnEliminar.Enabled = True
         End If
     End Sub
 
@@ -106,6 +108,7 @@ Public Class FrmCajas
                 dgFacturas.AutoGenerateColumns = False
                 dgFacturas.DataSource = Nothing
                 btnProcesar.Enabled = False
+                btnEliminar.Enabled = False
                 btnActualizar.Enabled = False
 
                 txtNombreUsuario.Text = atBEUsuario.Nombre
@@ -124,6 +127,7 @@ Public Class FrmCajas
                 dgFacturas.AutoGenerateColumns = False
                 dgFacturas.DataSource = Nothing
                 btnProcesar.Enabled = False
+                btnEliminar.Enabled = False
                 btnActualizar.Enabled = False
 
                 txtNombreUsuario.Text = atBEUsuario.Nombre
@@ -166,8 +170,21 @@ Public Class FrmCajas
         End If
     End Sub
 
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If elIdFacturaSeleccionada > 0 Then
+            If MsgBox("¿Desea eliminar la factura : " + CStr(elIdFacturaSeleccionada) + "?", vbYesNo + vbInformation + vbDefaultButton2, "Confirmacion") = vbYes Then
+                Dim blFacturas As New BLFacturas
+                CargarDatosDeFacturaSeleccionada(elIndexDeFacturaSeleccionada)
+                If blFacturas.ElimineLaFacturaSeleccionada(laFacturaSeleccionada.Codigo) Then
+                    CargueLasFacturasPendientes()
+                End If
+            End If
+        End If
+    End Sub
+
     Private Sub CargueLasFacturasPendientes()
         btnProcesar.Enabled = False
+        btnEliminar.Enabled = False
         elIdFacturaSeleccionada = 0
         elIndexDeFacturaSeleccionada = -1
         dgFacturas.DataSource = blCajas.CargueLaFacturasPendientesDeCobro()
