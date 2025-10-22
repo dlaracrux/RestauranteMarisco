@@ -32,6 +32,7 @@ Partial Class Registro_Facturas
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.chkImpuesto = New System.Windows.Forms.CheckBox()
         Me.lblModificaPrecio = New System.Windows.Forms.LinkLabel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cmbTipo = New System.Windows.Forms.ComboBox()
@@ -58,6 +59,13 @@ Partial Class Registro_Facturas
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dgLinea = New System.Windows.Forms.DataGridView()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtTotalFactura = New System.Windows.Forms.TextBox()
+        Me.lblTotalImpuesto = New System.Windows.Forms.Label()
+        Me.txtTotalImpuesto = New System.Windows.Forms.TextBox()
+        Me.rbBarra = New System.Windows.Forms.RadioButton()
+        Me.rbMesa = New System.Windows.Forms.RadioButton()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,14 +74,7 @@ Partial Class Registro_Facturas
         Me.precioTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.existencias = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tipoIndex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtTotalFactura = New System.Windows.Forms.TextBox()
-        Me.lblTotalImpuesto = New System.Windows.Forms.Label()
-        Me.txtTotalImpuesto = New System.Windows.Forms.TextBox()
-        Me.rbBarra = New System.Windows.Forms.RadioButton()
-        Me.rbMesa = New System.Windows.Forms.RadioButton()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.chkImpuesto = New System.Windows.Forms.CheckBox()
+        Me.aplicaImpuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -131,6 +132,16 @@ Partial Class Registro_Facturas
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "  Artículo  "
+        '
+        'chkImpuesto
+        '
+        Me.chkImpuesto.AutoSize = True
+        Me.chkImpuesto.Location = New System.Drawing.Point(437, 108)
+        Me.chkImpuesto.Name = "chkImpuesto"
+        Me.chkImpuesto.Size = New System.Drawing.Size(129, 20)
+        Me.chkImpuesto.TabIndex = 139
+        Me.chkImpuesto.Text = "Aplicar Impuesto"
+        Me.chkImpuesto.UseVisualStyleBackColor = True
         '
         'lblModificaPrecio
         '
@@ -463,7 +474,7 @@ Partial Class Registro_Facturas
         Me.dgLinea.BackgroundColor = System.Drawing.Color.SkyBlue
         Me.dgLinea.ColumnHeadersHeight = 29
         Me.dgLinea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.cantidad, Me.precio, Me.tipo, Me.precioTotal, Me.existencias, Me.tipoIndex})
+        Me.dgLinea.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.nombre, Me.cantidad, Me.precio, Me.tipo, Me.precioTotal, Me.existencias, Me.tipoIndex, Me.aplicaImpuesto})
         Me.dgLinea.Location = New System.Drawing.Point(44, 426)
         Me.dgLinea.Margin = New System.Windows.Forms.Padding(4)
         Me.dgLinea.MultiSelect = False
@@ -473,6 +484,96 @@ Partial Class Registro_Facturas
         Me.dgLinea.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgLinea.Size = New System.Drawing.Size(1219, 287)
         Me.dgLinea.TabIndex = 2
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label5.Location = New System.Drawing.Point(1002, 726)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(92, 17)
+        Me.Label5.TabIndex = 136
+        Me.Label5.Text = "Total Factura"
+        '
+        'txtTotalFactura
+        '
+        Me.txtTotalFactura.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtTotalFactura.Enabled = False
+        Me.txtTotalFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.txtTotalFactura.Location = New System.Drawing.Point(1104, 721)
+        Me.txtTotalFactura.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTotalFactura.MaxLength = 10
+        Me.txtTotalFactura.Name = "txtTotalFactura"
+        Me.txtTotalFactura.Size = New System.Drawing.Size(159, 23)
+        Me.txtTotalFactura.TabIndex = 3
+        Me.txtTotalFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'lblTotalImpuesto
+        '
+        Me.lblTotalImpuesto.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.lblTotalImpuesto.AutoSize = True
+        Me.lblTotalImpuesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalImpuesto.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblTotalImpuesto.Location = New System.Drawing.Point(726, 724)
+        Me.lblTotalImpuesto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTotalImpuesto.Name = "lblTotalImpuesto"
+        Me.lblTotalImpuesto.Size = New System.Drawing.Size(101, 17)
+        Me.lblTotalImpuesto.TabIndex = 138
+        Me.lblTotalImpuesto.Text = "Total Impuesto"
+        '
+        'txtTotalImpuesto
+        '
+        Me.txtTotalImpuesto.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtTotalImpuesto.Enabled = False
+        Me.txtTotalImpuesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotalImpuesto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.txtTotalImpuesto.Location = New System.Drawing.Point(835, 721)
+        Me.txtTotalImpuesto.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTotalImpuesto.MaxLength = 10
+        Me.txtTotalImpuesto.Name = "txtTotalImpuesto"
+        Me.txtTotalImpuesto.Size = New System.Drawing.Size(159, 23)
+        Me.txtTotalImpuesto.TabIndex = 137
+        Me.txtTotalImpuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'rbBarra
+        '
+        Me.rbBarra.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.rbBarra.AutoSize = True
+        Me.rbBarra.Checked = True
+        Me.rbBarra.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.rbBarra.Location = New System.Drawing.Point(11, 21)
+        Me.rbBarra.Name = "rbBarra"
+        Me.rbBarra.Size = New System.Drawing.Size(61, 20)
+        Me.rbBarra.TabIndex = 139
+        Me.rbBarra.TabStop = True
+        Me.rbBarra.Text = "Barra"
+        Me.rbBarra.UseVisualStyleBackColor = True
+        '
+        'rbMesa
+        '
+        Me.rbMesa.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.rbMesa.AutoSize = True
+        Me.rbMesa.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.rbMesa.Location = New System.Drawing.Point(11, 47)
+        Me.rbMesa.Name = "rbMesa"
+        Me.rbMesa.Size = New System.Drawing.Size(62, 20)
+        Me.rbMesa.TabIndex = 140
+        Me.rbMesa.Text = "Mesa"
+        Me.rbMesa.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.rbBarra)
+        Me.GroupBox3.Controls.Add(Me.rbMesa)
+        Me.GroupBox3.Location = New System.Drawing.Point(44, 726)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(83, 79)
+        Me.GroupBox3.TabIndex = 141
+        Me.GroupBox3.TabStop = False
         '
         'codigo
         '
@@ -590,105 +691,16 @@ Partial Class Registro_Facturas
         Me.tipoIndex.Visible = False
         Me.tipoIndex.Width = 125
         '
-        'Label5
+        'aplicaImpuesto
         '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(1002, 726)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(92, 17)
-        Me.Label5.TabIndex = 136
-        Me.Label5.Text = "Total Factura"
-        '
-        'txtTotalFactura
-        '
-        Me.txtTotalFactura.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtTotalFactura.Enabled = False
-        Me.txtTotalFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalFactura.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.txtTotalFactura.Location = New System.Drawing.Point(1104, 721)
-        Me.txtTotalFactura.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtTotalFactura.MaxLength = 10
-        Me.txtTotalFactura.Name = "txtTotalFactura"
-        Me.txtTotalFactura.Size = New System.Drawing.Size(159, 23)
-        Me.txtTotalFactura.TabIndex = 3
-        Me.txtTotalFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'lblTotalImpuesto
-        '
-        Me.lblTotalImpuesto.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.lblTotalImpuesto.AutoSize = True
-        Me.lblTotalImpuesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalImpuesto.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblTotalImpuesto.Location = New System.Drawing.Point(726, 724)
-        Me.lblTotalImpuesto.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblTotalImpuesto.Name = "lblTotalImpuesto"
-        Me.lblTotalImpuesto.Size = New System.Drawing.Size(101, 17)
-        Me.lblTotalImpuesto.TabIndex = 138
-        Me.lblTotalImpuesto.Text = "Total Impuesto"
-        '
-        'txtTotalImpuesto
-        '
-        Me.txtTotalImpuesto.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtTotalImpuesto.Enabled = False
-        Me.txtTotalImpuesto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotalImpuesto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.txtTotalImpuesto.Location = New System.Drawing.Point(835, 721)
-        Me.txtTotalImpuesto.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtTotalImpuesto.MaxLength = 10
-        Me.txtTotalImpuesto.Name = "txtTotalImpuesto"
-        Me.txtTotalImpuesto.Size = New System.Drawing.Size(159, 23)
-        Me.txtTotalImpuesto.TabIndex = 137
-        Me.txtTotalImpuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'rbBarra
-        '
-        Me.rbBarra.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.rbBarra.AutoSize = True
-        Me.rbBarra.Checked = True
-        Me.rbBarra.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.rbBarra.Location = New System.Drawing.Point(11, 21)
-        Me.rbBarra.Name = "rbBarra"
-        Me.rbBarra.Size = New System.Drawing.Size(61, 20)
-        Me.rbBarra.TabIndex = 139
-        Me.rbBarra.TabStop = True
-        Me.rbBarra.Text = "Barra"
-        Me.rbBarra.UseVisualStyleBackColor = True
-        '
-        'rbMesa
-        '
-        Me.rbMesa.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.rbMesa.AutoSize = True
-        Me.rbMesa.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.rbMesa.Location = New System.Drawing.Point(11, 47)
-        Me.rbMesa.Name = "rbMesa"
-        Me.rbMesa.Size = New System.Drawing.Size(62, 20)
-        Me.rbMesa.TabIndex = 140
-        Me.rbMesa.Text = "Mesa"
-        Me.rbMesa.UseVisualStyleBackColor = True
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.rbBarra)
-        Me.GroupBox3.Controls.Add(Me.rbMesa)
-        Me.GroupBox3.Location = New System.Drawing.Point(44, 726)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(83, 79)
-        Me.GroupBox3.TabIndex = 141
-        Me.GroupBox3.TabStop = False
-        '
-        'chkImpuesto
-        '
-        Me.chkImpuesto.AutoSize = True
-        Me.chkImpuesto.Location = New System.Drawing.Point(437, 108)
-        Me.chkImpuesto.Name = "chkImpuesto"
-        Me.chkImpuesto.Size = New System.Drawing.Size(129, 20)
-        Me.chkImpuesto.TabIndex = 139
-        Me.chkImpuesto.Text = "Aplicar Impuesto"
-        Me.chkImpuesto.UseVisualStyleBackColor = True
+        Me.aplicaImpuesto.HeaderText = "AplicaImpuesto"
+        Me.aplicaImpuesto.MinimumWidth = 6
+        Me.aplicaImpuesto.Name = "aplicaImpuesto"
+        Me.aplicaImpuesto.ReadOnly = True
+        Me.aplicaImpuesto.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.aplicaImpuesto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.aplicaImpuesto.Visible = False
+        Me.aplicaImpuesto.Width = 125
         '
         'Registro_Facturas
         '
@@ -753,6 +765,13 @@ Partial Class Registro_Facturas
     Friend WithEvents dgLinea As New System.Windows.Forms.DataGridView()
     Friend WithEvents Label5 As Label
     Friend WithEvents txtTotalFactura As TextBox
+    Friend WithEvents lblModificaPrecio As LinkLabel
+    Friend WithEvents lblTotalImpuesto As Label
+    Friend WithEvents txtTotalImpuesto As TextBox
+    Friend WithEvents rbBarra As RadioButton
+    Friend WithEvents rbMesa As RadioButton
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents chkImpuesto As CheckBox
     Friend WithEvents codigo As DataGridViewTextBoxColumn
     Friend WithEvents nombre As DataGridViewTextBoxColumn
     Friend WithEvents cantidad As DataGridViewTextBoxColumn
@@ -761,11 +780,5 @@ Partial Class Registro_Facturas
     Friend WithEvents precioTotal As DataGridViewTextBoxColumn
     Friend WithEvents existencias As DataGridViewTextBoxColumn
     Friend WithEvents tipoIndex As DataGridViewTextBoxColumn
-    Friend WithEvents lblModificaPrecio As LinkLabel
-    Friend WithEvents lblTotalImpuesto As Label
-    Friend WithEvents txtTotalImpuesto As TextBox
-    Friend WithEvents rbBarra As RadioButton
-    Friend WithEvents rbMesa As RadioButton
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents chkImpuesto As CheckBox
+    Friend WithEvents aplicaImpuesto As DataGridViewTextBoxColumn
 End Class

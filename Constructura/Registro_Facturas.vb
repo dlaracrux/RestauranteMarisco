@@ -122,6 +122,7 @@ Public Class Registro_Facturas
     End Sub
 
     Private Sub limpiarLosCampos()
+        txtCodigoArticulo.Text = ""
         txtPrecioUnitario.Text = Format(0, "0.00")
         txtCantidad.Text = Format(0, "0.00")
         txtExistencias.Text = Format(0, "0.00")
@@ -129,6 +130,7 @@ Public Class Registro_Facturas
         cmbTipo.SelectedIndex = 1
         elArticuloCargado = Nothing
         txtCodigoArticulo.Focus()
+        chkImpuesto.Checked = False
     End Sub
 
     Private Sub txtNombreCliente_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNombreCliente.KeyDown
@@ -221,15 +223,25 @@ Public Class Registro_Facturas
     End Sub
 
     Private Sub AgregueElArticuloAlDetalleDeFactura()
-        Dim elPrecioTotalLinea As Decimal = (CDec(txtCantidad.Text) * CDec(txtPrecioUnitario.Text))
-        Dim elPrecioTotalImpuesto As Decimal = (CDec(0.13) * elPrecioTotalLinea)
-        Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) + elPrecioTotalLinea + elPrecioTotalImpuesto)
+        If chkImpuesto.Checked Then
+            Dim elPrecioTotalLinea As Decimal = (CDec(txtCantidad.Text) * CDec(txtPrecioUnitario.Text))
+            Dim elPrecioTotalImpuesto As Decimal = (CDec(0.13) * elPrecioTotalLinea)
+            Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) + elPrecioTotalLinea + elPrecioTotalImpuesto)
 
-        dgLinea.Rows.Add(txtCodigoArticulo.Text, txtNombreArticulo.Text, txtCantidad.Text,
-                         txtPrecioUnitario.Text, cmbTipo.SelectedItem,
-                         elPrecioTotalLinea, txtExistencias.Text, cmbTipo.SelectedIndex, elPrecioTotalFactura)
-        txtTotalImpuesto.Text = Format(elPrecioTotalImpuesto, "0.00")
-        txtTotalFactura.Text = Format(elPrecioTotalFactura, "0.00")
+            dgLinea.Rows.Add(txtCodigoArticulo.Text, txtNombreArticulo.Text, txtCantidad.Text,
+                             txtPrecioUnitario.Text, cmbTipo.SelectedItem,
+                             elPrecioTotalLinea, txtExistencias.Text, cmbTipo.SelectedIndex, "true")
+            txtTotalImpuesto.Text = Format(CDec(txtTotalImpuesto.Text) + elPrecioTotalImpuesto, "0.00")
+            txtTotalFactura.Text = Format(elPrecioTotalFactura, "0.00")
+        Else
+            Dim elPrecioTotalLinea As Decimal = (CDec(txtCantidad.Text) * CDec(txtPrecioUnitario.Text))
+            Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) + elPrecioTotalLinea)
+            dgLinea.Rows.Add(txtCodigoArticulo.Text, txtNombreArticulo.Text, txtCantidad.Text,
+                             txtPrecioUnitario.Text, cmbTipo.SelectedItem,
+                             elPrecioTotalLinea, txtExistencias.Text, cmbTipo.SelectedIndex, "false")
+            txtTotalFactura.Text = Format(elPrecioTotalFactura, "0.00")
+        End If
+
     End Sub
 
     Private Sub txtCantidad_Leave(sender As Object, e As EventArgs) Handles txtCantidad.Leave
@@ -246,17 +258,28 @@ Public Class Registro_Facturas
             txtPrecioUnitario.Text = CStr(dgLinea.Item(dgLinea.Columns.IndexOf(precio), e.RowIndex).Value.ToString)
             txtExistencias.Text = CStr(dgLinea.Item(dgLinea.Columns.IndexOf(existencias), e.RowIndex).Value.ToString)
             cmbTipo.SelectedIndex = CInt(dgLinea.Item(dgLinea.Columns.IndexOf(tipoIndex), e.RowIndex).Value)
+            chkImpuesto.Checked = IIf(CStr(dgLinea.Item(dgLinea.Columns.IndexOf(aplicaImpuesto), e.RowIndex).Value.ToString) = "true", True, False)
             dgLinea.Rows.RemoveAt(e.RowIndex)
         End If
 
-        Dim elPrecioTotalLinea As Decimal = (CDec(txtCantidad.Text) * CDec(txtPrecioUnitario.Text))
-        Dim elPrecioTotalImpuesto As Decimal = (CDec(txtTotalImpuesto.Text) - (CDec(0.13) * elPrecioTotalLinea))
-        Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) - elPrecioTotalLinea - (CDec(0.13) * elPrecioTotalLinea))
+        If chkImpuesto.Checked Then
 
-        txtTotalImpuesto.Text = Format(elPrecioTotalImpuesto, "0.00")
-        txtTotalFactura.Text = Format(elPrecioTotalFactura, "0.00")
-        txtCantidad.Focus()
-        txtCantidad.Select()
+            Dim elPrecioTotalLinea As Decimal = (CDec(txtCantidad.Text) * CDec(txtPrecioUnitario.Text))
+            Dim elPrecioTotalImpuesto As Decimal = (CDec(txtTotalImpuesto.Text) - (CDec(0.13) * elPrecioTotalLinea))
+            Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) - elPrecioTotalLinea - (CDec(0.13) * elPrecioTotalLinea))
+
+            txtTotalImpuesto.Text = Format(elPrecioTotalImpuesto, "0.00")
+            txtTotalFactura.Text = Format(elPrecioTotalFactura, "0.00")
+            txtCantidad.Focus()
+            txtCantidad.Select()
+        Else
+            Dim elPrecioTotalLinea As Decimal = (CDec(txtCantidad.Text) * CDec(txtPrecioUnitario.Text))
+            Dim elPrecioTotalFactura As Decimal = (CDec(txtTotalFactura.Text) - elPrecioTotalLinea)
+            txtTotalFactura.Text = Format(elPrecioTotalFactura, "0.00")
+            txtCantidad.Focus()
+            txtCantidad.Select()
+        End If
+
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -296,10 +319,12 @@ Public Class Registro_Facturas
     End Sub
 
     Private Sub limpiarCampos()
+        limpiarLosCampos()
         CargueLosControlesPorDefecto()
         CargaElComboTipo()
         txtNombreCliente.Focus()
         txtNombreCliente.Select()
+
     End Sub
 
     Private Sub bCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
